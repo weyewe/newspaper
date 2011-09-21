@@ -3,6 +3,8 @@
 }
 footer#listwatch {
 /*  display:none;*/
+
+border: 1px solid blue;
 }
 section#abovefold {
     margin: 0 auto;
