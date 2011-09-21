@@ -9,6 +9,5 @@
 //= require header
 //= require jquery-corner
 //= require clearfield
-//= require sidebarfollower
 //= require stepcarousel
 
