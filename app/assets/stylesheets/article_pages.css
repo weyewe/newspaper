@@ -296,7 +296,7 @@ div.article_head .sponsorship {
     width: 1px;
 }
 .article .body p .end_of_article_mark {
-    background: url("../../img/sprites/sprite_article_pages.png") no-repeat scroll 0 -122px transparent;
+    background:  no-repeat scroll 0 -122px transparent;
     display: inline-block;
     height: 14px;
     margin-left: 6px;
@@ -501,7 +501,7 @@ aside h5 {
     padding-top: 2px;
 }
 .article_actions .widget.print .icon {
-    background: url("../../img/sprites/sprite_article_pages.png") no-repeat scroll 0 -20px transparent;
+    background:   no-repeat scroll 0 -20px transparent;
     height: 16px;
     left: 0;
     top: 0;
@@ -518,7 +518,7 @@ aside h5 {
     padding-top: 2px;
 }
 .article_actions .widget.corrections .icon {
-    background: url("../../img/sprites/sprite_article_pages.png") no-repeat scroll 0 -103px transparent;
+    background:   no-repeat scroll 0 -103px transparent;
     height: 10px;
     left: 0;
     top: 3px;
