@@ -278,13 +278,17 @@ a:visited {
 	float: left;
 	overflow: hidden;
 	margin: 0 18px 0 0;
-	width: 135px;
+/*  width: 135px;*/
+  width: 174px;
 	padding:0px;
 	height: 185px;
 }
 #specialReports .stepcarousel .panel img {
-	width: 135px;
-	height:135px;
+/*  width: 135px;*/
+  width : 170px;
+/*  height:135px;*/
+border : 1px solid #C5C5C5;
+padding: 1px;
 }
 #specialReports .image h4 {
 	color:#666;

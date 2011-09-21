@@ -26,6 +26,7 @@ class StoriesController < ApplicationController
   
   def show_public
     @story = Story.find params[:id] 
+    @title = @story.title 
     render :layout => 'application'
   end
   

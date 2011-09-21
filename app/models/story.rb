@@ -86,6 +86,10 @@ class Story < ActiveRecord::Base
   
   # The following is only used in development
   
+  def self.add_170px
+    
+  end
+  
   def self.refesh_story
     for story in self.all
       story.refresh
