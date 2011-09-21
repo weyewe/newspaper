@@ -32,7 +32,7 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   reconnect: false
   database: newspaper_production
