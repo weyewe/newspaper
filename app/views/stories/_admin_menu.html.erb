@@ -1,0 +1,43 @@
+<% if current_user && current_user.has_role?(:writer)%>
+  <div class='adminMenu'>
+  	<h3>Menu Edit Berita</h3>
+	
+  	<%if can? :update, story %>
+  		<%= link_to "Edit Story", edit_story_url(story), :title => "Edit This Story"%>
+  	<%end%>
+	
+  	<%if can? :create, story %>
+  		<%= link_to "New Story", new_story_url, :title => "Create New Story"%>
+  	<%end%>
+	
+  </div>
+<% end %>
+
+<div class="adminEditorMenu" style="padding:20px;">
+  <h3>Menu Publikasi</h3>
+  <ul style="height:27px; margin:2px 0 11px;" class="donateButtons">
+    <% if current_user && current_user.has_role?(:writer)%>
+      <%= render :partial => "publish_button" , :locals => {:story => story}%>
+    <% end %>
+    
+    <% if current_user && current_user.has_role?( :editor ) %>
+      <%= render :partial => "editor_action_button", :locals => {:story => story} %>
+    <% end %>
+  </ul>
+  
+  <% if story.post_status == POST_STATUS_CONSTANT[:approved] %>
+    <!-- Put the category selector -->
+    <h3>Categori Berita</h3>
+    <ul style="height:27px; margin:2px 0 11px;" class="donateButtons">
+      <li style="margin-left:2px; width:80%;" class="">
+
+      <%= form_for story do |f| %>
+        <%= f.select(:category_id , Category.selections ) %><br />
+        <%= f.submit "Select", :style => "font-size:16px; line-height:14px; color: black; padding: 5px 10px;" %>
+      <% end %>
+      </li>
+    </ul>
+  <% end %>
+  
+  
+</div>

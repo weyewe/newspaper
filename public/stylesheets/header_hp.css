@@ -1,0 +1,351 @@
+/* MODIFIED NGOULD  9/8/11 1:31 PM */
+
+header {
+	border-bottom:none !important;
+	margin:0  !important;
+}
+.headerwrapper	{
+	margin:0 auto;
+	width:980px;
+	height:160px;
+	position: relative;
+	z-index: 200;
+	}
+
+#primnav #header_topnav	{
+	height:47px;
+	/*overflow:hidden;*/
+	margin:0 auto;
+	width:976px;
+	text-align:left;
+	position: relative;
+	z-index: 200;
+	/*background-color:#fcf;*/
+
+}
+#primnav li.channels
+{
+	float: left;
+	font: normal 20px/24px Georgia;
+	padding: 12px 0 0;
+	display: block;
+	margin-right:40px;
+	height:31px;
+	position: relative;
+	/* IE HACKS */
+	margin-right:40px\9
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {#primnav li.channels	{margin-right:40px;}}
+
+#primnav li.channels a.dropdown
+{
+	background:url('http://images.forbes.com/media/assets/rl/icons.png') no-repeat right -220px;
+	color: #000;
+	height: 24px;
+	display: block;
+	overflow: hidden;
+	padding-right:10px;
+}
+* html #ch1	a.dropdown	{width:80px;}
+* html #ch2	a.dropdown	{width:84px;}
+* html #ch3	a.dropdown	{width:42px;}
+* html #ch4	a.dropdown	{width:129px;}
+* html #ch5	a.dropdown	{width:58px;}
+* html #ch6	a.dropdown	{width:98px;}
+* html #ch7	a.dropdown	{width:76px;}
+* html #ch8	a.dropdown	{width:44px;}
+#primnav li.channels a.dropdown:hover
+{
+	text-decoration: none;
+	background:url('http://images.forbes.com/media/assets/rl/icons.png') no-repeat right -236px;
+}
+#primnav li.channel_hover_left, #primnav li.channel_hover_middle, #primnav li.channel_hover_right	{border-bottom: 4px solid #1f304e;}
+#primnav li#ch8
+{
+	margin-right: 0px;
+	padding-left: 0px;
+	position: relative;
+	left: 0px;
+}
+#primnav li#ch8	a.dropdown	{position: relative;left: 3px;}
+#primnav li#ch1	a.dropdown	{position: relative;left: -1px;}
+#primnav li#ch1	{
+	position:relative;
+	left:2px\9
+}
+
+#primnav .sections	{
+	display:none;
+	position: absolute;
+	height:115px;
+	width:650px;
+	border:1px solid #1f304e;
+	box-shadow: 0px 2px 5px 0px #999;
+	-webkit-box-shadow: 0px 2px 5px 0px #999;
+	-moz-box-shadow: 0px 2px 5px 0px #999;
+	z-index: 99;
+	zoom: 1;
+	filter: 
+		progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=90,strength=3)
+		progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=180,strength=6)
+		progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=270,strength=3)
+		/*progid:DXImageTransform.Microsoft.Shadow(color=#aaaaaa,direction=360,strength=0);*/
+	top:47px;
+	background-color:#fff;
+	/* IE HACKS */
+	top/*\**/:46px;
+	*top:46px;
+	padding:13px;
+}
+#primnav .mid .sections	{width:590px;}
+#primnav .mid2 .sections	{width:570px;}
+
+
+#primnav .sections ul	{	
+	margin:7px 7px 0 0;
+	border-right:1px solid #e0e0e0;
+	padding-right:15px;
+	float:left;
+	height:120px;
+	min-width:100px;
+	position: relative;
+	top:-7px;
+}	
+/* TO MAKE BIZ SECTIONS FIT */
+#primnav #sect2 ul { min-width: 90px; }
+#primnav  #sect2 ul.last	{min-width: 38px;}
+#primnav  #sect2 .header_navpromo { width: 290px; }
+
+/* TO MAKE TECH SECTIONS FIT */
+#primnav #sect3 ul.last	{ min-width: 65px !important; }
+#primnav #sect3 .header_navpromo { width: 290px !important; }
+
+
+#primnav  #sect4 ul.last	{min-width: 125px;}
+#primnav .mid2 #sect5.sections ul.last {width: 70px;min-width: 70px;}
+#primnav  #sect5 .header_navpromo {width: 330px;}
+
+
+#primnav #sect8.sections	{width: 775px;}
+#primnav  #sect8 ul.last	{	
+	min-width: 200px !important;
+}
+
+#primnav .sections ul.last	{	
+	padding:7px 15px 0 0;
+	border-right: none;
+}	
+#primnav .channel_hover_left .sections ul.last 	{
+	margin-right:7px !important;
+}
+#primnav .channel_hover_right .sections ul.last 	{
+	margin-right:0px;
+	border-right:none !important;
+	width:115px;
+}
+#primnav .mid2 .sections ul.last 	{
+	width:190px;
+}
+#primnav .header_navpromo	{
+	float:left;
+	width:315px;
+	height:120px;
+	margin-top:0px;
+	padding-top:0px;
+	_height:133px;
+}
+#primnav #sect7 .header_navpromo	{
+	width:325px;
+}
+#primnav .noimage	{
+	height:120px;
+	width:285px;
+}
+.noimage h4	{font:normal 26px/30px Georgia;}
+#primnav .header_navpromo h4 a	{color:#000;}
+#primnav .header_navpromo h4 a:hover	{text-decoration:underline;}
+#primnav .channel_hover_right .header_navpromo 	{
+	margin-right:7px;
+	border-right:1px solid #e0e0e0;
+}
+.header_engagement 	{
+	font: normal 11px/13px Verdana;
+	white-space:nowrap;
+	padding-top:3px;
+}
+.header_engagement a	{color:#999 !important;}
+.header_engagement a.red	{color:#990000 !important;font-weight:normal;}
+
+.header_navpromo .advoice	{padding-left:0px !important;}
+#primnav .header_navpromo img	{
+	float:left;
+	margin:0 5px 0 ;
+}
+#primnav .channel_hover_right .header_navpromo img	{
+	float:left;
+	margin:0 5px 0 0;
+}
+#primnav .sections li	{
+	font: normal 11px/14px Verdana;
+	margin-bottom:5px;
+	_padding:0;
+	_margin:0 0 -7px 0;
+	_line-height:13px;
+}
+#primnav .sections li a	{color:#0f2d5f;display:block;padding:0;margin:0;}
+#primnav .sections li a:hover	{text-decoration:underline;}
+
+#primnav li.channel_hover_left .sections, #primnav li.channel_hover_middle .sections, #primnav li.channel_hover_right .sections	{
+	display:block;
+	position: absolute;
+}
+#primnav li.channel_hover_left .sections	{
+	left:0px;
+	left:-3px\9
+}
+#primnav li.channel_hover_middle .sections	{
+	left:50%;
+	right:50%;
+	left:-3px\9
+}
+#primnav li.channel_hover_right .sections	{
+	right:0px;
+	right:3px\9
+}
+#primnav li.channel_hover_right .sections	{*right:-3px;}
+#header_masthead	{
+	height:105px;
+	/*border-bottom:1px solid #dbdbdb;*/
+}
+#brand_search	{
+	position:relative;
+	width:980px;
+	margin:0 auto;
+	border-top: 1px solid #DBDBDB;
+	z-index:10px;
+}
+#brand_search img	{
+	border:none;
+	position:relative;
+	top:16px;
+}
+#header_userinfo	{
+	position:absolute;
+	right:0px;
+	top:15px;
+	font-size:11px;
+	color:#a0acc0;
+	z-index:15;
+	height:40px;
+	line-height:12px;
+}
+#header_userinfo b {color:#3c3c3c;}
+#header_userinfo a {color:#0F2D5F !important;}
+
+#header_search	{
+	position:absolute;
+	right:1px;
+	top:45px;
+	z-index:2;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {#header_search	{right:0px;}}
+#header_search .hs_inputbox	{
+	width:480px;
+	height:38px;
+	border:1px solid #89929d;
+	box-shadow: inset 0px 2px 5px 1px #ccc;
+	-webkit-box-shadow: inset 0px 2px 5px 1px #ccc;
+	-moz-box-shadow: inset 0px 2px 5px 1px #ccc;
+	z-index: 2;
+	background: #fff;
+
+}
+#header_search .hs_form_focus	{
+	outline:0 none !important;
+	color:#000;
+	border:none;
+	float:left;
+	outline:medium none;
+	padding:0;
+	width:440px;
+	font: normal 12px/14px Verdana;
+	text-align:left;
+	margin:12px 0 0 7px;
+	z-index: 4;
+}
+#header_search .hs_form_text	{
+	border:none;
+	float:left;
+	outline:medium none;
+	padding:0;
+	width:440px;
+	font: normal 12px/14px Verdana;
+	color:#999;
+	text-align:left;
+	margin:12px 0 0 7px;
+	z-index: 4;
+}
+
+#header_search input	{
+	border:0 none;
+	float:left;
+}
+#header_search .hs_form_sub {
+	background:url("http://images.forbes.com/media/assets/rl/sprite.png") repeat scroll -94px 2px #FFFFFF;
+	cursor:pointer;
+	font-size:0;
+	line-height: 0;
+	height:27px;
+	margin-top:7px;
+	overflow:hidden;
+	text-indent:-999px;
+	width:25px;
+	display:block;
+	color:#fff;
+}
+/*
+#header_search .hs_form_sub	{
+	background:url("http://images.forbes.com/media/assets/rl/hearder_search_submit.gif") repeat scroll 0 -1px #E66400;
+	cursor:pointer;
+	font-size:0;
+	height:27px;
+	width:27px;
+	margin-top:7px;
+	overflow:hidden;
+}
+*/
+#header_search	{}
+#header_promo	{
+	display:none;
+}
+#header_promo dt, #header_promo dd 	{
+	display:none;
+}
+#header_promo dt	{
+	display:none;
+}
+#header_promo dt	{
+	display:none;
+}
+#header_promo dd	{
+	display:none;
+}
+#header_promo dd i {
+	display:none;
+}
+#header_promos {
+	display:none;
+}
+#header_promo	{
+	display:none;
+}
+#header_magazines {
+	display:none;
+}
+#header_subscriber {
+	display:none;
+}
+#header_fakeit {
+	display:none;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {#header_fakeit	{display:none;}}

@@ -1,0 +1,14 @@
+<li style="margin-left:2px; width:80%;" class="fundButton">
+  <%= form_for story do |f| %>
+    <% if story.post_status == POST_STATUS_CONSTANT[:approved] %>
+      <%= f.hidden_field :post_status, :value => POST_STATUS_CONSTANT[:published]  %>
+      <%= f.submit "Disapprove", :style => "font-size:16px; line-height:14px; color: #FFFFFF; padding: 5px 10px; background-color:#B15B5B;" %>
+    <% elsif story.post_status == POST_STATUS_CONSTANT[:published]  %>
+      <%= f.hidden_field :post_status, :value => POST_STATUS_CONSTANT[:approved]  %>
+      <%= f.submit "Approve", :style => "font-size:16px; line-height:14px; color: #FFFFFF; padding: 5px 10px;" %>
+    <% end %>
+    
+    
+  <% end %>
+</li>
+

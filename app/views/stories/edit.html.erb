@@ -1,0 +1,15 @@
+<% @title = "Sableng.com - Edit #{@story.title}" %>
+
+<div class="formContainer">
+	<div class="formBody">
+		<% unless @story.errors.empty? %>
+			<% content_for :error do %>
+				<%= error_messages_for :story %>
+			<% end %>
+		<% end %>
+
+
+		<h2>Edit Your Story</h2>
+		<%= render :partial => 'form_transloadit' %>
+	</div>
+</div>

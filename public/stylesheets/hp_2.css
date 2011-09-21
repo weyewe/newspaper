@@ -1,0 +1,627 @@
+/* Updated ngould 8/22/11 2:54 PM */
+
+
+.clearfix { 
+	*clear:both;
+}
+.topAd {
+	width:980px;
+	margin: 20px 0 0 0;
+	z-index: 100;
+}
+.advoice {
+	color:#920A12;
+}
+a:visited {
+	color:#6d6d6d;
+}
+/* ------------ top nav ------------ */
+
+#topNav {
+	height:37px;
+	margin: 0 0 10px 0;
+	padding: 0;
+	border-bottom: 5px solid #dbdbdb;
+}
+#topNav .arrow {
+	display:block;
+	background:url(http://images.forbes.com/media/assets/home/sprite-hp.png) no-repeat 0 5px;
+	padding: 0;
+	width:18px;
+	height:21px;
+}
+#topNav .us {
+	margin: 0 0 -5px 10px;
+}
+#topNav .europe {
+	margin: 0 0 -5px 25px;
+}
+#topNav .asia {
+	margin: 0 0 -5px 15px;
+}
+#topNav ul.country {
+	margin:7px 0;
+	width:400px;
+}
+#topNav ul.country li {
+	font:normal 11px/14px Verdana;
+	float:left;
+	padding:0 5px 0 0;
+	margin:0 5px 0 0 !important;
+}
+#topNav ul.country li a {
+	text-decoration: underline;
+}
+#topNav ul.country .active {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight:bold;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	background-color: #0f2d5f;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0f2d5f), to(#0d4279));
+	background: -moz-linear-gradient(top,  #0f2d5f,  #0d4279);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0f2d5f', endColorstr='#0d4279');
+	padding: 2px 6px 3px 6px !important;
+	cursor: default;
+}
+#topNav .shareMagazine {
+	width:330px;
+	margin:0;
+	height:37px;
+}
+#topNav .shareMagazine .share {
+	margin:0;
+	font: normal 11px Verdana;
+	color:#666;
+}
+#topNav .shareMagazine .share ul {
+	display: inline-block;
+	margin:7px 0;
+}
+#topNav .shareMagazine .share li {
+	float:left;
+	margin:0 5px 0 0;
+}
+#topNav .shareMagazine .share li a {
+	width:20px;
+	height:20px;
+	display:block;
+}
+#topNav .shareMagazine .share .follow {
+	padding:3px 5px 0 0;
+}
+#topNav .shareMagazine .share li .facebook {
+	background:url(http://images.forbes.com/media/assets/home/sprite-hp.png) no-repeat 0 -17px;
+}
+#topNav .shareMagazine .share li .twitter {
+	background:url(http://images.forbes.com/media/assets/home/sprite-hp.png) no-repeat -25px -17px;
+}
+#topNav .shareMagazine .share li .linkedin {
+	background:url(http://images.forbes.com/media/assets/home/sprite-hp.png) no-repeat -50px -17px;
+}
+#topNav .shareMagazine .magazine {
+	margin:0;
+	width:175px;
+}
+#topNav .shareMagazine .freetrial {
+	display: inline-block;
+	margin:10px 10px 0 0;
+	font: normal 11px Verdana;
+}
+#sharesmall	{
+	margin: 0 0 0 20px !important;
+    position: relative;
+    width: 230px;
+}
+
+/* -----------------breking news ----------------- */
+
+#breakingNews	{
+	margin: 16px 0 10px 0;
+	border-bottom: 1px solid #dbdbdb;
+	padding:0 0 16px 0;
+	font: normal 18px Georgia;
+	color:#000;
+}
+#breakingNews	a {
+	color:#0f2d5f;
+}
+#breakingNews	.breakingRed {
+	color:#920a12;
+	text-transform: uppercase;
+	letter-spacing: 2px;;
+}
+
+/* ----------------- top story ----------------- */
+
+#topStory { 
+	margin:0 0 20px 0;
+	padding: 10px 0 20px 0;
+	border-bottom:5px solid #f2f2f2;
+}
+#topStory .stories { 
+	width:665px;
+	margin:0;
+	padding:0;
+}
+#topStory .mainStory { 
+	width:388px;
+	margin:0;
+	padding:0;
+}
+#topStory .mainStory img { 
+	width:388px;
+}
+#topStory .mainStory h1 { 
+	font: normal 30px Georgia;
+	margin:0 0 5px 0;
+	padding:0;
+}
+#topStory .mainStory .dek { 
+	font: normal 16px Georgia;
+	line-height: 24px;
+	margin:5px 0 3px 0;
+	padding:0;
+}
+#topStory .mainStory .related { 
+	margin:10px 0 0 0;
+}
+#topStory .mainStory .related li { 
+	list-style-type: disc;
+	list-style-position: inside;
+	margin:0;
+	padding:0;
+}
+#topStory .mainStory .related li h3 { 
+	display:inline-block;
+}
+#topStory .mainStory .related li h3 a { 
+	font: normal 12px Georgia !important;
+	color:#000 !important;
+	text-decoration: underline;
+}
+#topStory .mainStory .related li h3 a:visited { 
+	color:#6d6d6d !important;
+}
+#topStory .mainStory .dek a { 
+	font-size: 14px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+.byLine, .byline {
+	font: normal 10px Verdana;
+	color:#666;
+}
+#topStory .stories ul { 
+	width:250px;
+	margin:0;
+}
+#topStory .stories li { 
+	margin:0 0 25px 0;
+	padding:0;
+}
+#topStory .stories li h3 a { 
+	font: normal 18px Georgia !important;
+	color:#0f2d5f !important;
+}
+#topStory .video{ 
+	width:300px;
+	margin:0;
+	padding: 0;
+	/*overflow: hidden;*/
+    min-height: 491px;
+    position: relative;
+}
+#topStory .video .player { 
+	margin:0 0 10px 0;
+	padding: 0;
+}
+#topStory .video li { 
+	clear:both;
+	margin:0;
+	padding: 0;
+}
+#topStory .video li img { 
+	margin:0 10px 10px 0;
+	padding: 0;
+	width: 115px;
+}
+.video115	{
+	margin: 0 10px 10px 0;
+}
+
+#topStory .video h4 { 
+	font: bold 14px Georgia;
+}
+.lastMargin { 
+	margin-bottom:0 !important;
+}
+
+/* ----------------- special reports ----------------- */
+
+#specialReports {
+	margin:0 0 20px 0;
+	padding: 0 0 20px 0;
+	border-bottom:5px solid #f2f2f2;
+}
+#specialReports h2 {
+	margin:0;
+	padding: 0;
+	font: normal 18px Georgia;
+	color:#666;
+	text-transform: uppercase;
+	letter-spacing:2px;
+}
+#specialReports .carousel {
+	margin:20px 0 0 0;
+	padding: 0 39px 0 41px ;
+	width:900px;
+}
+#specialReports .stepcarousel{
+	position: relative;
+	overflow: hidden;
+	width: 918px;
+	height: 175px;
+}
+#specialReports .stepcarousel .belt{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#specialReports .stepcarousel .panel {
+	float: left;
+	overflow: hidden;
+	margin: 0 18px 0 0;
+	width: 135px;
+	padding:0px;
+	height: 185px;
+}
+#specialReports .stepcarousel .panel img {
+	width: 135px;
+	height:135px;
+}
+#specialReports .image h4 {
+	color:#666;
+	font:normal 13px Georgia;
+	margin-top:5px;
+}
+#specialReports .noimage {
+	color:#666;
+	font:normal 14px Georgia;
+}
+#specialReports .noimage h4{
+	font:normal 22px Georgia;
+}
+#specialReports .last{
+margin:0 !important;
+}
+
+/* ----------------- left rail ----------------- */
+
+#leftRail{
+	width:623px;
+	margin:0;
+	padding: 0;
+}
+
+#newstream { /* ----news stream--- */
+	margin:0;
+	padding: 0;
+}
+#newstream li {
+	margin:0 0 20px 0;
+	padding: 0;
+	border-bottom:5px solid #f2f2f2;
+}
+#newstream li h2 {
+	margin:0;
+	padding: 0;
+	font: normal 18px Georgia;
+	color:#666;
+	text-transform: uppercase;
+	letter-spacing:2px;
+}
+#newstream li h2 a {
+	color:#666;
+}
+#newstream li .channel {
+	margin:0 0 0 40px;
+}
+#newstream li .channel li {
+	margin:20px 0 20px 0;
+	border:none;
+}
+#newstream li .channel li img {
+	margin:0 10px 0 0;
+	max-height:100px;
+	max-width:100px;
+}
+#newstream li .channel li article.hedbyline, article.nowrap {
+	display:table-cell;
+	vertical-align:top;
+	width:10000px;
+	width:auto;
+	zoom:1;
+}
+#newstream li .channel li h3 {
+	font-size: 30px;
+	line-height:33px;
+	margin:0;
+}
+#newstream li .channel li h4 {
+	font-size: 14px;
+	letter-spacing:0.03em;
+}
+.todaysMarkets {
+	margin:0 0 20px 0;
+	padding:0;
+}
+.todaysMarkets iframe {
+	margin:-6px 0 0 -6px;
+	padding:0;
+	width:630px;
+	height:405px;
+	border:none;
+}
+/* -----------------  right rail ----------------- */
+
+aside {
+	width:340px;
+	background:#f1f1f1;
+	padding:20px 0 0;
+	float:right;
+}
+
+aside section {
+	margin:0 20px;
+	padding:20px 0;
+	border-bottom:5px solid #dbdbdb;
+}
+
+.blockAd {
+	text-align:center;
+	padding:0 0 20px;
+}
+.googleadd {
+	text-align:center;
+	padding:20px 0 20px 0;
+}
+
+aside h2, aside h2 a:link, aside h2 a:visited, aside h2 a:hover {
+	font: normal 36px/38px Gill Sans, "Trebuchet MS", Verdana, sans-serif;
+	color:#0f2d5f;
+	text-decoration: none;
+}
+
+aside h2 a:hover {
+	color:#000;
+	text-decoration: none;
+}
+
+aside .plusmore {
+	margin:10px 0 0;
+}
+
+#mostPopular {  /* ----most pop--- */
+	border-top:5px solid #dbdbdb;
+}
+#mostPopular ol {
+	list-style:decimal outside;
+	padding:10px 0 0 40px;
+	color:#999;
+}
+
+#mostPopular ol li {
+	font: normal 22px/0.2em Georgia;
+	margin: 15px 0;
+	*padding: 0;
+	word-wrap:break-word;
+}
+
+#mostPopular ol li a, .sideFeatured li a {
+	font:bold 13px/1.3em Georgia;
+	color:#000;
+	display:block;
+	text-decoration:none;
+}
+
+#mostPopular ol li a:hover, .sideFeatured li a:hover {
+	text-decoration:underline;
+}
+
+#mostPopular ol li .views, #mostPopular ol li .sales, #mostPopular ol li .growth {
+	font: normal 10px/12px Verdana;
+	display: inline-block;
+}
+
+#mostPopular ol li .growth {
+	border-left:1px solid #999;
+	padding:0 0 0 10px;
+	margin:0 0 0 5px;
+}
+
+#mostPopular ol li .personContain {
+	display:inline-block;
+	vertical-align:top;
+}
+
+#mostPopular ol li .personImg {
+	float:left;
+	margin:0 10px 0 0;
+}
+
+#mostPopular ol li .personMeta {
+	display:inline-block;
+	float:left;
+}
+
+aside #mostPopular .horznav {
+	background:transparent;
+	border-bottom:1px solid #b8b8b8;
+	padding:0;
+	height:33px;
+}
+aside #mostPopular .horznav li {
+	margin:0 8px 0 0 !important;
+	padding:0 !important;
+	height: 33px !important;
+	zoom:1;
+}
+aside #mostPopular .horznav li:last-child {
+	margin:0 !important;
+}
+aside #mostPopular .horznav li.active {
+	padding:0 !important;
+}
+
+aside #mostPopular .horznav li.active .arrow {
+	 background-position:0 -59px;
+	 width:24px;
+	 height:10px;
+	 margin:0 0 0 -12px;
+	 top:24px;
+}
+
+#intiinvest {  /* ---ii--- */
+	border-top:5px solid #dbdbdb;
+}
+#intiinvest .mainStory, #datadriven .mainStory {
+	margin:20px 0;
+	clear:both;
+	min-height: 100px;
+	font: normal 12px Georgia;
+	color:#000;
+}
+#intiinvest .mainStory h3 {
+	font: bold 16px Georgia;
+	margin:0 0 3px 0;
+}
+#datadriven .mainStory h3 {
+	font: bold 18px Georgia;
+	margin:0 0 3px 0;
+}
+#intiinvest .mainStory img, #datadriven .mainStory img {
+	margin:0 10px 0 0;
+}
+#intiinvest .mainStory a, #datadriven .mainStory a {color:#000;}
+#intiinvest .mainStory a:visited, #datadriven .mainStory a:visited {color:#000;}
+#intiinvest .moreStory {
+	clear:both;
+	margin:20px 0 0 0;
+}
+#intiinvest .sponsor, #datadriven .sponsor {
+	margin: 15px 0 0 5px;
+	font: normal 9px Verdana;
+	color:#999;
+	text-align:right;
+}
+#datadriven .sponsor div {
+    left: -50px;
+    position: relative;
+    top: -1px;
+	color:#999 !important;
+}
+#intiinvest .sponsoredby {
+    left: -1px;
+    position: relative;
+    top: -15px;
+}
+
+#intiinvest .moreStory h4 {
+	margin:0 0 10px 0;
+	font: bold 13px Georgia;
+}
+
+#datadriven h2 {
+    color: #000000;
+    font: 28px Georgia;
+    margin: 0 0 20px;
+}
+
+
+
+#subscription h2 {  /* ---subscription--- */
+	font: normal 28px Georgia;
+	margin:0 0 20px 0;
+	color:#000;
+}
+#subscription h2 .anIssue {
+	color:#990000 !important;
+	display:block;
+	margin:2px 0 0 0;
+}
+#subscription .cover {
+	width:121px;
+	height:161px;
+	background:url(http://images.forbes.com/media/assets/home/magback.png) no-repeat;
+}
+#subscription ul.forms {
+	margin:0;
+}
+#subscription ul.forms li {
+	padding:0 0 8px 0;
+}
+#subscription input {
+	height:20px;
+	*height:18px;
+	height /*\**/: 18px\9;
+	color:#999;
+	font: normal 12px Verdana;
+	margin:0;
+	*padding:4px 0 0 3px;
+	padding /*\**/: 4px 0 0 3px\9;
+	vertical-align: middle;
+}
+#subscription .name, #subscription .address, #subscription .city, #subscription .email  {
+	width:160px;
+}
+#subscription .zip  {
+	width:100px;
+}
+#subscription .buttonlink {
+	color:#fff;
+	font: bold 10px Verdana;
+}
+#subscription ul.link { 
+	margin:15px 0 0 0;
+	font-size: 9px;
+	color:#999;
+}
+#subscription ul.link a { 
+	font: bold 12px Verdana;
+}
+#subscription ul.link li {
+	padding:3px 0 3px 0;
+}
+
+/* Loading State */
+
+.loading {
+	background:url("http://images.forbes.com/media/assets/rl/loading.gif") no-repeat scroll 0 0 transparent;
+	height:16px;
+	left:50%;
+	position:absolute;
+	top:40%;
+	width:16px;
+}
+
+/* Recommended: personlized HP module */
+#recommendations {
+	border-top: 5px solid #F2F2F2;
+	padding-top:17px;
+	margin-top:20px;
+}
+#recommendations div	{
+	color:#666;
+	font-size:11px;
+	padding-bottom:20px;
+}
+#topStory .video #recommendations h4	{
+	padding-bottom:13px;
+	font-size:13px;
+}
+#contentwrapper {
+    *height: 4100px;
+}

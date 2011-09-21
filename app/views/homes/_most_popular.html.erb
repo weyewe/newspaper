@@ -1,0 +1,21 @@
+<section id="mostPopular">
+  <div class="tabular">
+    <ul class="tabs horznav clearfix">
+      <li class="active"><a href="#" rel="mostPop">Most Popular</a><span class="arrow"></span></li>
+      <!-- <li style="border: medium none;"><a href="#" rel="mostSearch">Most Searched</a><span class="arrow"></span></li> -->
+
+    </ul>
+
+
+    <ol style="display: block;" id="mostPop" class="tabbed">
+      <% for story in Story.find(:all, :limit => 10 )%>
+        <li>
+          <%= link_to story.title, story_public_url( story )%>
+        </li>
+      <% end %>
+    </ol>	
+  </div>
+</section>
+
+
+

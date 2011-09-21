@@ -1,0 +1,37 @@
+
+
+<div id="login">
+  <div class="formContainer">
+  	<% if resource && resource.errors.any? %>
+  		<div class="error">
+  			<%= error_messages_for :user_session %>
+  		</div>
+  	<% end %>
+    <!-- form_for(resource, :as => resource_name, :url => registration_path(resource_name)) -->
+  	<%=  form_for(resource, :as => resource_name, :url =>session_path(resource_name) , :html => {:class => 'register'}) do |f| %>
+  		<div class="formBody">
+  		  <div class="row">
+          <%= f.label :email, "Email" %>
+          <%= f.text_field :email, :class => "text", :tabindex => 1 %>
+        </div>
+      
+        <div class="row">
+          <%= f.label :password, "Password" %>
+          <%= f.password_field :password, :class => "text", :tabindex => 1 %>
+        </div>
+ 
+      
+  			<div class='row'>
+  				<div>
+  					<%= submit_tag "Login", {:class => 'submitButton'} %>
+  				</div>
+  			</div>
+  		</div>
+  	<% end %>
+  </div>
+</div>
+
+
+
+
+<%#= render :partial => "devise/shared/links" %>

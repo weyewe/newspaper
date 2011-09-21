@@ -1,0 +1,29 @@
+<% @title = "Writer - Home" %>
+<%# @filter = 'featured' %>
+<%# @items = nil %>
+<ul class="tabs">
+	<li <%if @filter=='all'%>class="current"<%end%>>
+    <!-- <a href="/">All Stories</a> -->
+	  <%= link_to "All ", writer_dashboard_url( :filter => :all )%>
+  <!-- </li>
+  <li <%#if @filter=='featured'%>class="current"<%#end%>>
+    <%#= link_to "Featured", writer_dashboard_url(:filter => :featured)%>
+  </li> -->
+	<li <%if @filter=='approved'%>class="current"<%end%>>
+    <!-- <a href="/published">Published</a> -->
+	  <%= link_to "Approved", writer_dashboard_url(:filter => :approved) %>
+	</li>
+	<li <%if @filter=='published'%>class="current"<%end%>>
+    <!-- <a href="/published">Published</a> -->
+	  <%= link_to "Pending Approval ", writer_dashboard_url(:filter => :published) %>
+	</li>
+	<li <%if @filter=='draft'%>class="current"<%end%>>
+    <!-- <a href="/updates">Draft</a> -->
+    <%= link_to "Draft ", writer_dashboard_url(:filter => :draft)%>
+	</li>
+</ul>
+<div class="seeMoreContainer">
+	<%#=get_more_link(@filter)%>
+</div>
+
+	<%= render :partial => "shared/lists", :locals => {:items => @items, :no_items_message => "No stories found for this selection.", :show_pagination => false} %>

@@ -1,0 +1,19 @@
+<div class="mainStory fleft">
+  <h1>
+    <%= link_to @main_story.title , story_public_url(@main_story)%>
+  </h1>
+  
+
+  
+  <%= link_to story_public_url(@main_story) do %>
+    <%= image_tag StoryImage.find(:first, :conditions => {
+      :image_type => "homepage",
+      :story_id => @main_story.id
+    }).url %>
+  <% end %>
+
+  <div class="dek">How successful entrepreneurs, investors and artists have built something out of nothing. <b>
+    <%= link_to "Continue »", story_public_url(@main_story)%>
+    </b></div>
+  <div class="byLine">Forbes staff</div>
+</div>

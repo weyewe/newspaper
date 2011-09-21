@@ -1,0 +1,12 @@
+story:
+  auth_key: a919ae5378334f20b8db4f7610cdd1a7
+  template_id: dd15de5ad2b942a2938869f513add756
+  return_value: 
+    - ":original"
+    - "story"
+    - "homepage"
+    - "teaser"
+profile:
+  auth_key: a919ae5378334f20b8db4f7610cdd1a7
+  template_id: 08d058abcdbb4e9eb57522cf83e9d5bf
+  

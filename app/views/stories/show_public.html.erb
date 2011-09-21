@@ -1,0 +1,156 @@
+
+<section id="abovefold" class="clearfix">
+  <div id="topNav">
+  </div>
+	<div class="article_head">
+
+													
+	<div class="sponsorship">
+		<div class="logo">
+		  
+		</div>
+	</div>
+		
+		
+
+
+
+
+
+<div class="user_block type_article_head ">
+<a class="avatar" href="http://blogs.forbes.com/tomiogeron/">
+<img src="http://blogs-images.forbes.com/cache/gravatars/tomiogeron_136.jpg" alt="Tomio Geron">
+</a>
+
+<p class="user">
+			<a href="http://blogs.forbes.com/tomiogeron/">Tomio Geron</a><span class="desc">, Forbes Staff</span>
+  	</p>
+
+<p class="about">Covering consumer Internet, especially social and start-up varieties.</p>
+
+<p class="follow"><a onclick="s.linkTrackVars='prop18';s.linkType='o';s.linkName='articleLink_ContribBylineFollow';if(typeof(globalPageName)!='undefined')s.prop18=globalPageName;s.lnk=s.co(this);s.gs(s_account);" href="http://blogs.forbes.com/people/tomiogeron/?do=follow" target="_blank">+ Follow</a></p>
+<div class="arrow"></div>
+</div>    				
+		<hgroup>
+																
+										<h5 class="slug"><a href="#"><%= @story.category.name%></a></h5>
+			<h6><span class="divider">|</span></h6>
+		    						<h6>
+				9/19/2011 @ 7:22PM
+
+			    								<span class="divider">|</span>2,016 views
+												    						</h6>
+			<h1><%= @story.title %></h1>
+
+									
+		    						    					</hgroup>
+								
+
+						    				
+	</div><!-- end div.article_head -->
+
+	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+	<aside>
+		
+		<div class="block ad">
+
+
+		</div>
+									
+<div class="block most_popular">
+  <h2 class="subhed">Most Popular</h2>
+
+  <div style="display: none;" class="loading_spinner">
+  </div>
+
+
+
+  <div style="overflow: hidden;" class="popular_wrapper" data-url="/ajax/popular/most_popular">
+    <ul class="posts" data-viewcount-display="+[number] views" style="display: block;">
+      <% for story in Story.find(:all, :limit => 10)%>
+        <li>
+          
+          <%= link_to story_public_url(story) do %>
+            <span class="headline"><%= story.title %></span>
+          <% end %>
+          
+          
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+</div>						
+																		
+
+
+
+		    					    					
+
+	<div class="block ad">
+			
+
+	</div>
+
+	<div class="sticky_ad_container">
+		<div style="position: relative;" class="position_reference">
+			<div style="position: relative; top: 0pt;" class="block ad sticky lastsect">
+		
+			</div>
+		</div>
+	</div><!-- end div.sticky_ad_container -->
+	
+	</aside>
+	
+	<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+	
+	<div id="leftRail" class="fleft clearfix article">
+																			
+		<div class="body">
+			<div class="featured_image">
+			  <%#= image_tag(@story.get_image_url_with_type(:story)) %>
+			  <%= image_tag StoryImage.find(:first, :conditions => {
+          :image_type => "story",
+          :story_id => @story.id
+        }).url %>
+			</div>
+			<%= @story.content.html_safe %>		
+		</div><!-- end div.body -->
+		
+	
+		
+								
+      <%= render :partial => "share_widget"%>
+      <%= render :partial => "related_links"%>
+												
+							
+		
+		
+		<div id="comments">
+		  <h3>
+		    Komentari Berita
+		  </h3>
+		</div>
+		
+		<div id="fb-root"></div>
+    <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <fb:comments href="<%= story_public_url(@story) %>" num_posts="5"
+      width="622">
+    </fb:comments>
+              
+                 
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<div class="right_col">
+  <div class="clear"></div>
+</div><!-- end div.right_col -->
+
+<div class="clear"></div>
+
+</div><!-- end div.engagement_block -->						    				
+								
+			    					
+	</div>
+</section>

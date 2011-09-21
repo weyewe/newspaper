@@ -1,0 +1,55 @@
+<%unless @story.new_record?%>
+	<div class="headlineByline">
+		<h1><%#=link_to h(@story.headline), story_path(@story) %><!--erik, this needs to link to the summary tab. help?-->
+		  <a href="/">
+		    <% if @story.post_status == 0 %>
+		      <%= "[Draft]"%>
+		    <% end %>
+		  <%= @story.title %>
+		  
+		  </a>
+		</h1>
+		<ul>
+      <!-- <li> 
+        <%#= link_to image_tag(@story.user.photo(:thumb)), profile_path(@story.user) %>
+        By <%#= link_to @story.user.full_name, profile_path(@story.user) %>
+      </li> -->
+			<li> <a href="/"><img src="/images/default_avatar.png" alt="Default_avatar"></a>
+      By <a href="/profiles/11759-willy-yunnal">Willy Yunnal</a> </li>
+      <!-- <%# if @story.peer_reviewer %>
+        <li>
+          Peer review by <%#= link_to @story.user.full_name, profile_path(@story.user) %>
+        </li>
+      <%#end%> -->
+		</ul>
+		
+		
+    
+    
+	</div>
+	
+  <div class="joinContainer">
+	  <% if not current_user %> 
+      <%= link_to "< Halaman Utama", root_url %>
+    <% elsif current_user && current_user.has_role?(:writer) %>
+      <%= link_to "< Halaman Utama", writer_dashboard_url %>
+    <% elsif current_user && current_user.has_role?(:editor) %>
+      <%= link_to "< Halaman Utama", editor_dashboard_url %>
+    <% end %>
+  </div>
+	
+<%else%>
+	<div class="headlineByline">
+		<h1>Publikasikan Beritamu</h1>
+		<p>Memulai berita itu mudah sekali!</p>
+	</div>
+	<div class="joinContainer">
+	  <% if not current_user %> 
+      <%= link_to "< Halaman Utama", root_url %>
+    <% elsif current_user && current_user.has_role?(:writer) %>
+      <%= link_to "< Halaman Utama", writer_dashboard_url %>
+    <% elsif current_user && current_user.has_role?(:editor) %>
+      <%= link_to "< Halaman Utama", editor_dashboard_url %>
+    <% end %>
+  </div>
+<%end%>

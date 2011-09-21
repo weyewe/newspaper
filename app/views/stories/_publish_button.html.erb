@@ -1,0 +1,17 @@
+<% if story.post_status == 0 || story.post_status == 1 %>
+
+  <li style="margin-left:2px; width:80%;" class="fundButton">
+    <% if story.post_status == 0 %>
+      <%= form_for story do |f| %>
+        <%= f.hidden_field :post_status , :value => 1 %>
+        <%= f.submit "Publish", :style => "font-size:16px; line-height:14px; color: #FFFFFF; padding: 5px 10px;" %>
+      <% end %>
+    <% elsif story.post_status == 1  %>
+      <%= form_for story do |f| %>
+        <%= f.hidden_field :post_status , :value => 0 %>
+        <%= f.submit "Unpublish", :style => "font-size:16px; line-height:14px; color: #FFFFFF; padding: 5px 10px; background-color:#B15B5B;" %>
+      <% end %>
+    <% end %>
+  </li>
+
+<% end %>

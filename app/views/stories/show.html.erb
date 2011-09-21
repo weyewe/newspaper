@@ -1,0 +1,50 @@
+<% @title = "Sableng.com -  #{h @story.title}" %>
+
+<div class="pitchContainer">
+  <div class="pitchLeftContainer">
+  	<br />
+
+  	<%# if !@story.video_embed.blank? %>
+  	<% if false %>
+  		<div class="videoContainer">
+  			<%= transform_embed_code(@story.video_embed, 670, 320) %>
+  		</div>
+  	<% elsif @story.story_images.count != 0 %>
+  		<div class="largerFeaturedImage">
+  			<%= image_tag(@story.get_image_url_with_type(:story)) %>
+  		</div>
+  	<%end%>
+
+		<div class="shortDescription">
+			<%= @story.content.strip_double_spaces.html_safe %>
+		</div>
+
+  
+
+
+    <br />
+    <br />
+  	
+  	<%#= publishing_workflow_buttons_for(current_user) if logged_in? %>
+    <!-- <div id="fb-comment-wrapper" style="padding-top:20px; margin-bottom:30px;"> -->
+     <%# if  RAILS_ENV == "production"%>
+      <div id="fb-root"></div>
+      <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+      <fb:comments href="<%= story_url(@story) %>" num_posts="5"
+        width="650">
+      </fb:comments>
+    <%# end %>
+    <!-- </div> -->
+    
+    
+  </div><!-- pitchLeftContainer -->
+
+  <div class="pitchRightContainer" style=" background-color:rgb(240,240,240);">
+    <% if current_user %>
+  	  <%= render :partial => "stories/admin_menu",:locals => {:story=>@story} %>
+  	<% else %>
+    <!-- <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/5482894.js"></script>
+    <noscript><a href="http://polldaddy.com/poll/5482894/">Apakah Indonesia-Bahrain bagus?</a></noscript> -->
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+/*
+ *= require reset
+ *= require header_hp
+ *= require universal
+ *= require hp_2
+ *= require footer
+ *= require buttons
+ *= require article_pages
+ *= require user_blocks
+*/
+
+
+/* the homes#show ends at buttons, the rest is article*/

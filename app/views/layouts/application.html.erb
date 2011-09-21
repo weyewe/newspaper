@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Sumbernya Berita Faktual - Sableng.com</title>
+  
+  <%#= render :partial => "layouts/public_view/meta" %>
+  <%= stylesheet_link_tag "application" %>
+  <%= csrf_meta_tag %>
+  <%#= render :partial => "layouts/public_view/stylesheets" %>
+	<%#= render :partial => "layouts/public_view/javascripts" %>
+	
+  <!--[if IE]>
+  <script src="http://www.forbes.com/scripts/html5shiv.js"></script>
+  <%= javascript_include_tag "html5shiv" %>
+  <![endif]--> 
+  <!--[if IE 6]>
+  <script src="http://images.forbes.com/scripts/rl/DD_belatedPNG.js"></script>
+  <%= javascript_include_tag "DD_belatedPNG" %>
+  <script>
+  DD_belatedPNG.fix('a, b, div, img, span, ul, ol, li, td, th, hgroup,nav, section, small, b, i, em, cite, h1, h2, h3, h4, h5, h6, #editbrand, .dropdown, #header_subscriber, .hs_form_sub, .back, .next, .plusmore, .fbook, .name a, .number, .prev, .nexxt, .twitterShare, .wealth,.wealthTime dd, .bar, #footer_datapartners, #footer_sites');
+  </script>
+  <%= stylesheet_link_tag "ie6" %>
+  <![endif]-->
+
+
+	<%= javascript_include_tag  "application" %>
+	
+	<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'adc89722-75cc-40de-bc25-c5f3ae781ace'});</script>
+	
+	
+	
+	<link rel="SHORTCUT ICON" href="http://images.forbes.com/icon/favicon.ico">
+</head>
+
+<body>
+  <div style="display:none;">
+  </div> 
+ 
+  <div id="omniture" style="display:none">
+  </div> 
+ 
+
+ 
+  <center>
+    <div class="topAd">
+    </div>
+  </center>
+
+<!-- Start: content -->
+<div class="globalwrapper">
+<header>
+    <div class="headerwrapper">
+      
+      <%#= render :partial => "primary_nav" %>
+    
+        <!-- Start: Branding/Search/User Info -->
+        <div id="header_masthead" class="clearfix">
+            <div id="brand_search">
+                 
+<!-- Start: Magazine Promo -->
+<!-- End: Magazine Promo -->
+
+<%#= link_to root_url, :id => "main_forbes_logo" do %>
+  <!-- <img src="http://s3.amazonaws.com/sablengmedia/sableng.png" alt="" height="70" width="280"> -->
+<%# end %>
+<%#= link_to root_url, :id => "main_forbes_logo" do %>
+  <!-- <img src="http://images.forbes.com/media/assets/header_baked/forbes_logo_main.gif" alt="" height="70" width="280"> -->
+<%# end %>
+
+<%= link_to root_url, :id => "main_forbes_logo" do %>
+  <img src="http://s3.amazonaws.com/sablengmedia/sableng2.gif" alt="" height="120" width="357">
+<% end %>
+
+
+
+
+
+<!-- Start: User Info -->
+<div id="header_userinfo">
+            <a id="login" href="http://members.forbes.com/membership/signup.jhtml">Login</a>
+    </div>
+<!-- End: User Info -->
+<!-- Start: Searchbox  -->
+<div id="header_search">
+        <form action="http://search.forbes.com/search/find">
+                <div class="hs_inputbox">
+                        <input value="searchtabgeneraldark" name="tab" type="hidden">
+                        <input rel="Search news, business leaders, and stock quotes" class="hs_form_text clearFieldBlurred" value="Search news, business leaders, and stock quotes" name="MT" type="text">
+                        <input class="hs_form_sub" type="submit">
+                </div>
+        </form>
+
+</div>
+<!-- End: Searchbox -->
+
+
+            </div>
+        <!-- End: Branding/Search/User Info -->        
+                    </div>
+            </div>
+            
+    </header><!-- End: header -->
+</div>
+<div id="header_fakeit"></div>
+
+<style type="text/css">
+#mygallery{overflow: hidden;}
+</style>
+
+
+
+<!-- Start: content --> 
+<div id="contentwrapper">    
+	  <%= yield %>
+   	
+       <!-- <div style="position: absolute; top: 0pt;" id="sidebar_follower"> 
+        <div style="display: block; top: 0px;" class="shareholder"> 
+            <div class="box boxfacebook"> 
+                <div class="countbox"> 
+                    <span id="fbcount2">4057</span> 
+                    <small>shares</small> 
+                </div> 
+                <div class="box-bottom"></div> 
+                <span st_processed="yes" class="st_facebook_button"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span style="background-image: url(&quot;http://w.sharethis.com/images/facebook_counter.png&quot;);" class="stMainServices st-facebook-counter">&nbsp;<img style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;" src="/images/forbes/check-big.png"></span></span></span> 
+            </div> 
+            <div class="box boxtwitter"> 
+                <div class="countbox"> 
+                    <span id="twitcount2">2209</span> 
+                    <small>tweets</small> 
+                </div> 
+                <div class="box-bottom"></div> 
+                <span st_processed="yes" class="st_twitter_button" st_title="Get the latest news from #Forbes"><span class="stButton" style="text-decoration:none;color:#000000;display:inline-block;cursor:pointer;"><span style="background-image: url(&quot;http://w.sharethis.com/images/twitter_counter.png&quot;);" class="stMainServices st-twitter-counter">&nbsp;<img style="position: absolute; top: -7px; right: -7px; width: 19px; height: 19px; max-width: 19px; max-height: 19px; display: none;" src="/images/forbes/check-big.png"></span></span></span> 
+            </div> 
+        <span st_processed="yes" class="st_sharethis_custom"><div class="sharebox plusmoredark">Share</div></span> 
+        </div> 
+    </div>  -->
+	  
+</div>
+<!-- End: content --> 
+
+
+<!-- Start: footer --> 
+
+
+<!-- SHARETHIS --> 
+<!-- <script type="text/javascript"> 
+  loadScriptCallback("http://w.sharethis.com/button/buttons.js", function(){
+     stLight.options({
+    publisher:'71b2a625-b381-4d3b-aeba-d5bfa6cd88e2',
+    embeds:'true'
+      });
+       
+      stButtons.getCount("http://www.forbes.com/home_usa/","facebook",document.getElementById('fbcount2')); //(url,service,elemnt)
+      stButtons.getCount("http://www.forbes.com/home_usa/","twitter",document.getElementById('twitcount2'));
+      stButtons.getCount("http://www.forbes.com/home_usa/","facebook",document.getElementById('fbcount3')); //(url,service,elemnt)
+      stButtons.getCount("http://www.forbes.com/home_usa/","twitter",document.getElementById('twitcount3'));
+  });
+  $(document).ready(function() {
+    $('.shareholder').css('display','block');
+  });
+</script> -->
+<!-- <script type="text/javascript" src="/images/forbes/sidebarfollower.js"></script>  -->
+
+	<!-- Start: LISTS VIEW  -->
+<footer id="listwatch">
+	<section id="listwatchtabs">
+
+
+        <!-- START: CELEBS -->
+                <div style="display: block;" id="listgroup3" class="tabbed listview">
+			<ul>
+				<li class="textintro">
+					Kami adalah team independent jurnalis yang bertujuan untuk mengupas 
+					berita-berita politik demi membebaskan bangsa Indonesia. 
+					<br />
+					<br />
+					Ada ketidakadilan di daerah anda?
+					Kontak team kami di <b>sableng@sableng.com</b>
+				</li>
+
+<!--        <li class="over lv1a"><a href="http://www.forbes.com/profile/lady-gaga" class="lv1a"><img src="http://images.forbes.com/media/2011/05/17/lady-gaga-2_190x280.jpg"><div><h4><b>#1</b>Lady Gaga</h4><span class="readmore">Latest News »</span></div></a></li>
+
+        <li class="over lv1b"><a href="http://www.forbes.com/profile/justin-bieber" class="lv1c"><img src="http://images.forbes.com/media/lists/people/justin-bieber_380x278.jpg"><div><h4><b>#3</b>Justin Bieber</h4><span class="readmore">Latest News »</span></div></a></li>
+        <li class="over lv1c"><a href="http://www.forbes.com/profile/taylor-swift" class="lv1c"><img src="http://images.forbes.com/media/lists/people/taylor-swift_380x278.jpg"><div><h4><b>#7</b>Taylor Swift</h4><span class="readmore">Latest News »</span></div></a></li>
+        <li class="over lv1d"><a href="http://www.forbes.com/profile/bon-jovi" class="lv1d"><img src="http://images.forbes.com/media/lists/people/bon-jovi_320x181.jpg"><div><h4><b>#8</b>Bon Jovi</h4><span class="readmore">Latest News »</span></div></a></li>
+        <li class="over lv1e"><a href="http://www.forbes.com/profile/lebron-james" class="lv1e"><img src="http://images.forbes.com/media/lists/people/lebron-james_320x181.jpg" "=""><div><h4><b>#10 </b>LeBron James</h4><span class="readmore">Latest News »</span></div></a></li>
+
+        <li class="over lv1f"><a href="http://www.forbes.com/profile/katy-perry" class="lv1f"><img src="http://images.forbes.com/media/2011/05/17/katy-perry_320x181.jpg"><div><h4><b>#12</b>Katy Perry</h4><span class="readmore">Latest News »</span></div></a></li> -->
+			</ul>
+   		</div>
+
+   		<!-- <div id="listgroup3" class="tabbed listview">
+			<ul>
+				<li class="textintro">
+					Oprah Winfrey takes back her crown while pop chart phenomenon Lady Gaga catapults to No. 4 on this year's ranking of the richest and most powerful actors, actresses and musicians.
+					<a class="readmore" href="http://www.forbes.com/celebrities/">View complete list »</a>
+				</li>
+
+				<li class="over lv1a"><a href="http://www.forbes.com/lists/2010/53/celeb-100-10_Lady-Gaga_8UOG.html" class="lv1a"><img src="http://images.forbes.com/media/lists/people/lady-gaga_190x280.jpg"><div><h4><b>#4</b>Lady Gaga</h4><span class="readmore">Latest News »</span></div></a></li>
+				<li class="over lv1b"><a href="http://www.forbes.com/lists/2010/53/celeb-100-10_Beyonce-Knowles_YA72.html" class="lv1b"><img src="http://images.forbes.com/media/2010/06/29/0629_beyonce-knowles_380x278.jpg"><div><h4><b>#2</b>Beyonce Knowles</h4><span class="readmore">Latest News »</span></div></a></li>
+				<li class="over lv1c"><a href="http://www.forbes.com/lists/2010/53/celeb-100-10_Tiger-Woods_WR6D.html" class="lv1c"><img src="http://images.forbes.com/media/2010/09/15/0915_male-celebs-tiger-woods_380x278.jpg"><div><h4><b>#5</b>Tiger Woods</h4><span class="readmore">Latest News »</span></div></a></li>
+				<li class="over lv1d"><a href="http://www.forbes.com/lists/2010/53/celeb-100-10_Johnny-Depp_PCS9.html" class="lv1d"><img src="http://images.forbes.com/media/2010/09/07/0907_johnny-depp_320x181.jpg"><div><h4><b>#9</b>Johnny Depp</h4><span class="readmore">Latest News »</span></div></a></li>
+				<li class="over lv1e"><a href="http://www.forbes.com/lists/2010/53/celeb-100-10_Roger-Federer_SWSL.html" class="lv1e"><img src="http://images.forbes.com/media/2010/06/29/0629_roger-federer_320x181.jpg"><div><h4><b>#29</b>Roger Federer</h4><span class="readmore">Latest News »</span></div></a></li>
+				<li class="over lv1f"><a href="http://www.forbes.com/lists/2010/53/celeb-100-10_Cameron-Diaz_9D3T.html" class="lv1f"><img src="http://images.forbes.com/media/2010/06/29/0629_cameron-diaz_320x181.jpg"><div><h4><b>#60</b>Cameron Diaz</h4><span class="readmore">Latest News »</span></div></a></li>
+			</ul>
+   		</div> -->
+        <!-- END: CELEBS -->
+       
+   	
+	</section>
+</footer>
+<!-- End: LISTS VIEW -->
+
+
+
+      
+		
+  </body>
+</html>
+
+
+
+
+
+

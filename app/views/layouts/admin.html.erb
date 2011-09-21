@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en">
+
+<head>
+  <title>Sumbernya Berita Faktual - Sableng.com</title>
+  
+ 
+  <%= stylesheet_link_tag "admin" %>
+  <%= javascript_include_tag "admin" %>
+  <%= csrf_meta_tag %>
+  
+</head>
+
+	<body>
+
+    
+		
+		<!-- START HEADER -->
+		<div class='upperWrapper'>
+			<div class='innerWrapper'>
+				<%= render :partial => "layouts/admin/header" %>
+			</div>
+		</div>
+		<!-- END HEADER -->
+		
+		<%if flash[:notice] || flash[:success] || flash[:error]%>
+			<div class="flashError">
+				<div class='innerWrapper'>
+					<div>
+						<%= flash[:error] if flash[:error]%>
+						<%= flash[:notice] if flash[:notice]%>
+						<%= flash[:success] if flash[:success]%>					
+					</div>
+				</div>
+			</div>
+		<%end%>
+		
+		<!-- Only show middle header if a partial is defined for the particular controller... -->
+		<% if File.exists?("#{Rails.root}/app/views/#{params[:controller]}/_header.html.erb")%>
+			<div class='middleWrapper'>
+				<div class='innerWrapper'>
+					<%if @page_not_found%>
+						<%= render :partial => "pages/header"%>
+					<%else%>
+						<%= render :partial => "header" %>
+					<%end%>
+				</div>
+			</div>
+		<% end%>
+
+		<div class='lowerWapper'>
+			<div class='innerWrapper'>
+				<div class="contentContainer">
+					<%= yield %>
+				</div>
+			</div>
+		</div>
+
+		<div class="bottomWrapper">
+			<%= render :partial => 'layouts/admin/footer' %>
+		</div>
+
+
+
+		<%= yield :bottom %>
+
+	</body>
+</html>

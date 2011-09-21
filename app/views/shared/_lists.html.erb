@@ -1,0 +1,20 @@
+<% if items.blank? %>
+  <div class="noItemsMessage">
+    <%= no_items_message %>
+  </div>
+<% else %>
+  <ul class="storyGrid">
+    <%#counter =  0 %>
+    <% for story in items %>
+      <%#= create_row( story, counter )%>
+      <li>
+        <%=link_to image_tag(story.get_image_url_with_type(:story), {:alt => h(story.title)}), story_path(story), {:rel => "nofollow"} %>
+        <h3><%=link_to story.get_title_with_length(50), story_path(story) %></h3>
+
+      </li>
+    <% end %>
+  </ul>
+<%end%> 
+
+
+<%= paginate items %> 
