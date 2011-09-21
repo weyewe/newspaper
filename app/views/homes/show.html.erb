@@ -91,7 +91,19 @@
 		  <%= render :partial => "category", :locals =>{:stories => category.stories.limit(4),
 		    :category => category} %>
 		<% end %>
-
+    
+    
+    <% for category in Category.all[2..(Category.count)] %>
+		  <%= render :partial => "category", :locals =>{:stories => category.stories.limit(4),
+		    :category => category} %>
+		<% end %>
+    
+    
+    <% for category in Category.all[2..(Category.count)] %>
+		  <%= render :partial => "category", :locals =>{:stories => category.stories.limit(4),
+		    :category => category} %>
+		<% end %>
+    
 				
 				
 				
