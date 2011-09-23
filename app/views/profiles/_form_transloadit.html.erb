@@ -6,8 +6,19 @@
   <div class="row">
     <%= f.label     :name, "Nama" %>
     <%= f.text_field :name,  :value => @profile && @profile.name ? @profile.name : TEXT[:name], :onclick => "clear_text('headline', '#{TEXT[:name]}')", 
-    :class => @story && @story.headline ? "" : "gray_text", :id => "headline" %>
+    :class => @profile && @profile.name ? "" : "gray_text", :id => "headline" %>
   </div>
+
+  
+ 
+  <div class="row">
+     <%= f.label :short_description, "Deskripsi singkat:" %>
+     <%= f.text_field :short_description , :value => @profile && @profile.short_description ? @profile.short_description : TEXT[:short_description],
+       :onclick => "clear_text('short_description', '#{TEXT[:short_description]}')", 
+       :class => @profile && @profile.short_description ? "" : "gray_text", :id => "short_description" %>
+   </div>
+   
+   
 
   <div class="row">
     <%= f.label :description, "Tentang Kamu" %>

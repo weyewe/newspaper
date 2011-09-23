@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110923021210) do
+ActiveRecord::Schema.define(:version => 20110923050622) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20110923021210) do
     t.integer  "user_id"
     t.string   "avatar_url"
     t.string   "cropped_avatar_url"
+    t.string   "short_description"
   end
 
   add_index "profiles", ["slug"], :name => "index_profiles_on_slug", :unique => true

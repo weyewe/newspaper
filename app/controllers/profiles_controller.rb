@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
   
   def update
     @profile = Profile.update_and_extract_transloadit( params , current_user )
-    redirect_to cropper_url( @profile )
+    redirect_to cropper_url
   end
   
   def show_cropper
