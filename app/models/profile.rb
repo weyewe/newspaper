@@ -6,11 +6,11 @@ class Profile < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, :use => :slugged
   
-  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h  
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h  , :user_id
   
   def self.create_and_extract_transloadit( params , current_user)
     profile = self.new( params[:profile] )
-    profile.user_id = current_user.id
+    profile.user = current_user
     profile.save
     profile.assign_transloadit( params )
     profile
