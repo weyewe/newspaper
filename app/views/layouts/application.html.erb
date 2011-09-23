@@ -24,6 +24,7 @@
 
 	<%= javascript_include_tag  "application" %>
 	
+  <!-- The sharethis js -->
 	<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'adc89722-75cc-40de-bc25-c5f3ae781ace'});</script>
 	
 	
@@ -93,22 +94,10 @@
   	<%= yield %>
    	<%#= render :partial => "vertical_share_column"%>
   </div>
-
-
-<!-- Start: footer --> 
-
-
-
-  <div class="clearfix" style="display:block;"></div>
-	<!-- Start: LISTS VIEW  -->
+  
 	<%= render :partial => "layouts/listwatch_footer"%>
 	<%#= render :partial => "layouts/listwatch_fake_footer"%>
- 
-
   <%#= render :partial => "layouts/global_footer"%>
-
-      
-		
   </body>
 </html>
 

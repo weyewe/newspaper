@@ -1,0 +1,27 @@
+<ul class="tabs">
+	<li <%if @filter=='credential'%>class="current"<%end%>>
+	  <%= link_to "Credentials",
+	    edit_credential_url %>
+	</li>
+  <!-- <li <%#if @filter=='featured'%>class="current"<%#end%>>
+    <%#= link_to "Featured", editor_dashboard_url(:filter => :featured)%>
+  </li> -->
+	
+	<% if current_user.profile != nil %>
+  	<li <%if @filter=='edit_profile'%>class="current"<%end%>>
+  	  <%= link_to "Edit Profile", edit_profile_url(@profile) %>
+  	</li>
+	<% end %>
+	
+
+    
+	<% if current_user.profile != nil %>
+	<li <%if @filter=='profile_view'%> class="current"<%end%>>
+	  <%= link_to "Profile", profile_url(@profile) %>
+	</li>
+	<% end %>
+	
+</ul>
+<div class="seeMoreContainer">
+	<%#=get_more_link(@filter)%>
+</div>

@@ -1,163 +1,76 @@
-
 <section id="abovefold" class="clearfix"> 
-		<!--Start: top nav--> 
-      
-      <div id="topNav">
+  <!--Start: top nav--> 
 
-      
-      	<ul class="country fleft">
-      <!-- <li><a href="#" class="active">U.S.</a><div class="arrow us"></div></li>
-          <li><a href="http://www.forbes.com/home_europe/">Europe</a></li>
-          <li><a href="http://www.forbes.com/home_asia/">Asia</a></li> -->
-      <!-- The share module -->
-	        <li>
-              <div style="display: none;" class="shareholder">
-    
-              </div>
-          </li>
-          <!--End Share This Module Repositioning-->
+  <div id="topNav">
+    <ul class="country fleft">
+      <li>
+        <div style="display: none;" class="shareholder">
+        </div>
+      </li>
+    </ul>
 
-		</ul>
-		
-		<div class="shareMagazine fright">
-			<div class="share fleft">
-
-        <!-- <ul>
-          <li class="follow">Follow</li>
-          <li><a href="http://www.facebook.com/forbes" class="facebook"></a></li>
-          <li><a href="http://www.twitter.com/forbes" class="twitter"></a></li>
-          <li><a href="http://www.linkedin.com/company/forbes.com" class="linkedin"></a></li>
-        </ul> -->
-			</div>
-      <!-- <div class="magazine fright">
-
-        <a href="https://subs.forbesmagazine.com/loc/FRB/crownHP" class="freetrial fleft">Free Trial Issue</a><a href="https://subs.forbesmagazine.com/loc/FRB/crownHP"><img src="/images/forbes/magazines.png" class="fright" height="37" width="74"></a>
-      </div> -->
-		</div>
-		
+    <div class="shareMagazine fright">
+      <div class="share fleft">
       </div>
-      
-  <!--end: top nav-->
+    </div>
 
-	<!--Start: top stories-->    
-	<%= render :partial => "top_story_container"%>
+  </div>
+
+<!--end: top nav-->
+
+<!--Start: top stories-->    
+  <%= render :partial => "top_story_container"%>
 
 <!--end: top stories-->
-  
- 
-
-
 <!--start: special reports--> 
-  
-  	<section id="specialReports">
 
-  	
-  		<h2>komik sableng</h2>
-  		
-  		<div class="carousel">
-			<div id="mygallery" class="stepcarousel">
-				<div style="width: 2736px;" class="belt">
-				  <% counter = 0 %>
-				  <% for story in Story.find(:all, :limit => 4 )%>
-			  	  <div style="float: none; position: absolute; left: <%= counter*230%>px;" class="panel image">
-			  	    <% counter = counter + 1 %>
-			  	    
-			  	    <%= link_to story_public_url(story) do %>
+  <section id="specialReports">
+    <h2>komik sableng</h2>
+
+    <div class="carousel">
+      <div id="mygallery" class="stepcarousel">
+        <div style="width: 2736px;" class="belt">
+          <% counter = 0 %>
+          <% for story in Story.find(:all, :limit => 4 )%>
+            <div style="float: none; position: absolute; left: <%= counter*230%>px;" class="panel image">
+              <% counter = counter + 1 %>
+
+              <%= link_to story_public_url(story) do %>
                 <%= image_tag StoryImage.find(:first, :conditions => {
                   :image_type => "homepage",
                   :story_id => story.id
-                }).url %>
+                  }).url %>
               <% end %>
-              
-		  	      <h4>
-		  	        <%= link_to story.title, story_public_url(story) %>
-		  	      </h4>
-		  	    </div>
-				  <% end %>
-					
-					
-				
-				</div>
-			</div>
-		</div>		
-  	</section>
+
+              <h4>
+                <%= link_to story.title, story_public_url(story) %>
+              </h4>
+            </div>
+          <% end %>
+        </div> <!-- end of belt-->
+      </div>  <!-- end of stepcarousel -->
+    </div>		
+  </section>
 
   <!--end: special reports--> 
-	<!--Begin: left rail--> 
-	<div id="leftRail" class="fleft clearfix">
-		<ul id="newstream">
-		  
-		<% for category in Category.all[2..(Category.count)] %>
-		  <%= render :partial => "category", :locals =>{:stories => category.stories.limit(4),
-		    :category => category} %>
-		<% end %>
-    
-				
-		</ul>
- 		</div>
-<!--End: left rail--> 
-	<!--Begin: right rail--> 
-      <aside>
-            <div class="blockAd">
-
-            </div>    
+  <!--Begin: left rail--> 
+  <div id="leftRail" class="fleft clearfix">
+    <ul id="newstream">
+      <% for category in Category.all[2..(Category.count)] %>
+        <%= render :partial => "category", :locals =>{:stories => category.stories.limit(4),
+        :category => category} %>
+      <% end %>
+    </ul>
+  </div>
+    <!--End: left rail--> 
+    <!--Begin: right rail--> 
+  <aside>
+    <div class="blockAd">
+    </div>    
     <%= render :partial => "most_popular"%>
-
-		 <!-- intelligent investment module -->
-<section id="intiinvest">
-<a href="http://www.forbes.com/intelligentinvesting"><!-- <img alt="" src="/images/forbes/ii.png" height="19" width="267"> --></a>
-
-
-			<div class="mainStory">
-				<a href="http://www.forbes.com/sites/investor/2011/08/25/how-to-get-your-retirement-back-on-track/"><!-- <img src="/images/forbes/0522_money-coins-stack_100x100.jpg" "="" class="fleft"> --></a>
-				<article class="nowrap">
-				<h3><a href="http://www.forbes.com/sites/investor/2011/08/25/how-to-get-your-retirement-back-on-track/">How To Get Your Retirement Back On Track</a></h3>It's too late to save your nest egg from a down market--even if you're in your 40s or 50s.
-				</article>
-			</div>
-                              
-                              
-                              
-                              
-                              
-			<div class="moreStory">
-                      
-
-				<h4><a href="http://www.forbes.com/sites/chrisbarth/2011/08/24/power-woman-irene-rosenfeld-isnt-afraid-to-break-a-few-cadbury-eggs/">Power Woman Irene Rosenfeld Isn't Afraid To Break A Few (Cadbury) Eggs</a></h4>
-                                      
-                       
-				<h4 class="lastMargin"><a href="http://www.forbes.com/sites/chrisbarth/2011/08/19/contrarian-kleinschmidt-not-afraid-of-big-bad-market-buying-microsoft-pfizer-and-more/">Contrarian Kleinschmidt Not Afraid Of Big Bad Market, Buying Microsoft, Pfizer And More</a></h4>
-			</div>
-                      
-                      
-                      <div class="sponsor">				
-			<!-- <script type="text/javascript">OAS_AD('ScottradeLogo');</script> --><a href="http://ads.forbes.com/RealMedia/ads/click_lx.ads/homepage.forbes.com/index.jhtml/270910983/ScottradeLogo/OasDefault_v5/default/empty.gif/64575a556f6b3448354c494143666347" target="_top"><!-- <img src="/images/forbes/64575a556f6b3448354c494143666347_009.gif" alt="" border="0" height="1" width="1"> --></a> 
-		</div>
-
-                      
-</section>
-<!--/intelligent investing module --> 
-
-                      <!-- DATA DRIVEN -->
-<section id="datadriven">
-	<h2><a href="http://www.forbes.com/data-driven/">Data Driven</a></h2>
-	<div class="mainStory">
-              
-              
-		<a href="http://www.forbes.com/data-driven/"><!-- <img src="/images/forbes/1118_data_100x100.jpg" class="fleft"> --></a>
-		<article class="nowrap">
-			<h3><a href="http://www.forbes.com/data-driven/">Do the Math: How Data And Analytics Are Shaping Better Business</a></h3>
-		</article>
-              </div>
-              <div class="sponsor">				
-                 
-	</div>
-</section>
-<!--/DATA DRIVEN -->
-
-
-		<div style="position: static; top: 0pt;" id="blockAdStalker"></div>			
-	</aside>
-<!--End: right rail-->   
-     	
-
+    <%= render :partial => "intelligent_investing" %>
+    <%= render :partial => "data_driven" %>
+    <div style="position: static; top: 0pt;" id="blockAdStalker"></div>			
+  </aside>
+  
 </section>

@@ -44,9 +44,10 @@
 					<%#= render :partial => "layouts/cart"%>
 					<li style="margin: 0 5px;"> 
 					  | 
+		
+            
 					    
-					    
-					    <%= link_to "SETTING", "#" %>
+					    <%= link_to "SETTING", extract_profile_setting_link %>
 					  | 
 					</li>
 					<li>Welcome back <%= current_user.email %> </li>

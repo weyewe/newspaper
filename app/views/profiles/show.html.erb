@@ -1,0 +1,37 @@
+<% @title = "Sableng.com - #{current_user.profile.name} Profile" %>
+<%= render :partial => "tab" %>
+
+
+<div class="pitchContainer">
+  <div class="pitchLeftContainer">
+    <div class="contributorInfo">
+      <div class="contributorPhoto">
+        <div class="crop">
+          <%= image_tag current_user.profile.cropped_avatar_url, :width => 136, :height => 136 , 
+            :alt => current_user.profile.name %>
+          <!-- <img width="136" height="136" class="avatar avatar-136 photo avatar-default" src="http://blogs-images.forbes.com/assets/images/avatars/dpomerantz_136.jpg" alt="Dorothy Pomerantz"> -->
+        </div>
+      </div>
+      
+      <div class="contributorNameTitle">
+        <h2 class="wrapped">
+          Willy Y. Wirawan
+        </h2>
+        <h3>
+          Hyper realistic
+        </h3>
+      </div>
+    
+      <div class="clearboth">&nbsp;</div>
+    </div>
+    
+    <div class="contributorDetails">
+      <h3>About Me</h3>
+      <%= current_user.profile.description.html_safe %>
+      
+    </div>
+  </div>
+  
+  <div class="pitchRightContainer">
+  </div>
+</div>

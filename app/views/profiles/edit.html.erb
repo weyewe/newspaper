@@ -1,0 +1,18 @@
+<% @title = "Sableng.com - Edit Profile" %>
+
+<%= render :partial => "tab" %>
+
+<div class="formContainer">
+	<div class="formBody">
+		<% unless @profile.errors.empty? %>
+			<% content_for :error do %>
+				<%= error_messages_for :story %>
+			<% end %>
+		<% end %>
+
+
+		<h2>Edit Profile Anda</h2>
+		<%= render :partial => "form_transloadit"%>
+		
+	</div>
+</div>

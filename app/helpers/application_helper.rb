@@ -82,4 +82,13 @@ module ApplicationHelper
       return "(#{counts})"
     end
   end
+  
+  
+  def extract_profile_setting_link
+    if current_user.profile == nil || current_user.profile.name == nil
+      return new_profile_url
+    else
+      return vanity_url(current_user.profile )
+    end 
+  end
 end

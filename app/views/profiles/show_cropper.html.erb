@@ -1,0 +1,51 @@
+<% @title = "Sableng.com - Betulkan Avatar" %>
+<%= render :partial => "tab" %>
+
+
+<% content_for (:head) do %>  
+<%= stylesheet_link_tag "jquery.Jcrop" %>  
+<%= javascript_include_tag "jquery.Jcrop.min" %>
+
+
+<script type="text/javascript">  
+  jQuery(function() {  
+    console.log("before cropbox");
+    jQuery('#cropbox').Jcrop( {
+        onChange: update_crop,  
+        onSelect: update_crop,  
+        setSelect: [0, 0, 500, 500],  
+        aspectRatio: 1
+        });  
+    console.log("after cropbox");
+    function update_crop(coords) {  
+      jQuery('#crop_x').val(coords.x);  
+      jQuery('#crop_y').val(coords.y);  
+      jQuery('#crop_w').val(coords.w);  
+      jQuery('#crop_h').val(coords.h);    
+    }
+    
+  });  
+</script>  
+<% end %>
+
+
+<div class="formContainer">
+	<div class="formBody">
+
+
+		<h2>Crop the Profile Pic</h2>
+		
+		<%= image_tag @profile.avatar_url, :id => "cropbox" %>  
+		
+		
+		<%= form_for @profile, :url => crop_profile_image_url do |form| %>  
+      <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>  
+        <%= form.hidden_field attribute, :id => attribute %>  
+      <% end %>  
+      <p><%= form.submit "Crop" %></p>  
+    <% end %>
+    
+    
+		
+	</div>
+</div>

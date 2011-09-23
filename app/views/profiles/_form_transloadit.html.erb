@@ -1,0 +1,46 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+
+<%= form_for( @profile, :url => 'http://api2.transloadit.com/assemblies', :html => { :multipart => true, 
+  :id=>"new_profile_form" }) do |f| %>
+  <input type="hidden" name="params" value="<%= transloadit_value_profile_json(@profile) %>" />
+  <div class="row">
+    <%= f.label     :name, "Nama" %>
+    <%= f.text_field :name,  :value => @profile && @profile.name ? @profile.name : TEXT[:name], :onclick => "clear_text('headline', '#{TEXT[:name]}')", 
+    :class => @story && @story.headline ? "" : "gray_text", :id => "headline" %>
+  </div>
+
+  <div class="row">
+    <%= f.label :description, "Tentang Kamu" %>
+    <%= f.cktext_area :description, :width=>'750px', :height=>'200px' %>
+  </div>
+
+  <div class="row media">
+    <label>
+      Upload Profile Pic
+      <br/>
+    </label>
+    <%= f.file_field :avatar_url %><br/>
+    <span class="small quieter"> JPEG, PNG and GIF's less than 5 MB.</span>
+  </div>
+
+  <div class="float-left">
+		<%= image_submit_tag image_path('admin/save.png') %>
+	</div>
+
+
+  
+<% end %>
+
+
+  <script type="text/javascript">
+  var tlProtocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+  document.write(unescape("%3Cscript src='" + tlProtocol + "assets.transloadit.com/js/jquery.transloadit2.js' type='text/javascript'%3E%3C/script%3E"));
+
+  console.log("Protocol is initialized");
+  </script>
+  <script type="text/javascript">
+  // We call .transloadit() after the DOM is initialized:
+  jQuery(document).ready(function() {
+    jQuery('#new_profile_form').transloadit({wait: true});
+  });
+  </script>
