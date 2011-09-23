@@ -3,6 +3,7 @@ class PasswordsController < ApplicationController
   before_filter :authenticate_user!
 
   def edit
+    @filter ="credential"
     @user = current_user
     @profile = current_user.profile
   end
