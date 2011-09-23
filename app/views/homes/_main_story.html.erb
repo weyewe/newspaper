@@ -12,8 +12,8 @@
     }).url %>
   <% end %>
 
-  <div class="dek">How successful entrepreneurs, investors and artists have built something out of nothing. <b>
+  <div class="dek">Mau tahu lebih lengkapnya? Click <b>
     <%= link_to "Continue »", story_public_url(@main_story)%>
     </b></div>
-  <div class="byLine">Forbes staff</div>
+  <div class="byLine"><%= @main_story.user.profile.name %></div>
 </div>

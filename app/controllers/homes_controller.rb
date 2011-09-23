@@ -9,15 +9,19 @@ class HomesController < ApplicationController
       redirect_to editor_dashboard_url
     end
     
-    @items = Story.order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
-    # @items = Story.where(:post_status => 2).order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
-    @main_story = Story.find(:first, :conditions => {:category_id => 1})
+    # @items = Story.order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
+    # @items = Story.where(:post_status => POST_STATUS_CONSTANT[:approved]).order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
+    @main_story = Story.find(:first, :conditions => {:category_id => 1,
+        :post_status => POST_STATUS_CONSTANT[:approved]
+      })
+      
     if @main_story == nil 
-      @main_story = Story.first
+      @main_story = Story.find(:first, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
     end
     @top_stories = Story.find(:all, :conditions => {
       :category_id => 2 ,
-    }, :limit => 6)
+      :post_status => POST_STATUS_CONSTANT[:approved]
+      }, :limit => 6)
   end
   
   def writer_dashboard
