@@ -12,7 +12,7 @@
 
 		<h2>Edit password</h2>
 		
-		<%= form_for(@user, :as => @user, :url => password_path, :html => { :method => :put , :class => "register"}) do |f| %>
+		<%= form_for(@user, :as => @user, :url => update_password_url , :html => { :method => :put , :class => "register"}) do |f| %>
       <div class="formBody">
         <div class="row">
           <%= f.label :current_password, "Password Sekarang" %>

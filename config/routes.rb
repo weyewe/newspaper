@@ -12,6 +12,9 @@ Newspaper::Application.routes.draw do
   match 'dashboard/editor' => "dashboard#editor" , :as => :editor_dashboard
   match 'story/:id' => "stories#show_public" , :as => :story_public
   
+  match 'edit_password' => "passwords#edit" , :as => :special_edit_password
+  match 'update_password' => "passwords#update" , :as => :update_password
+  
   
   match 'wait_for_confirmation' => "homes#wait_for_confirmation" , :as => :confirmation_waiting
 
@@ -23,8 +26,8 @@ Newspaper::Application.routes.draw do
 
 
 
-  match 'profile/edit_credential' => "profiles#edit_credential", :as => :edit_credential
-  match 'profile/update_credential' => "profiles#update_credential", :as => :update_credential
+  # match 'profile/edit_credential' => "profiles#edit_credential", :as => :edit_credential
+  # match 'profile/update_credential' => "profiles#update_credential", :as => :update_credential
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
