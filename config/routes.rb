@@ -1,6 +1,7 @@
 Newspaper::Application.routes.draw do
   root :to => "homes#show"
-  devise_for :users, :controllers => {:sessions => "users/sessions"}
+  devise_for :users, :controllers => {:sessions => "users/sessions", :passwords => "passwords" }
+  resources :passwords
 
   resources :stories
   # resources :users

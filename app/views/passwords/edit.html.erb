@@ -1,0 +1,39 @@
+<% @title = "Sableng.com - Edit Profile" %>
+
+<%= render :partial => "profiles/tab" %>
+
+<div class="formContainer">
+		<% unless @user.errors.empty? %>
+			<% content_for :error do %>
+				<%= error_messages_for :user %>
+			<% end %>
+		<% end %>
+
+
+		<h2>Edit password</h2>
+		
+		<%= form_for(@user, :as => @user, :url => password_path, :html => { :method => :put , :class => "register"}) do |f| %>
+      <div class="formBody">
+        <div class="row">
+          <%= f.label :current_password, "Password Sekarang" %>
+          <%= f.password_field :current_password, :class => "text", :tabindex => 1 %>
+        </div>
+    	  <div class="row">
+          <%= f.label :password, "Password Baru" %>
+          <%= f.password_field :password, :class => "text", :tabindex => 1 %>
+        </div>
+
+        <div class="row">
+          <%= f.label :password_confirmation, "Konfirmasi Password" %>
+          <%= f.password_field :password_confirmation, :class => "text", :tabindex => 1 %>
+        </div>
+
+
+    		<div class='row'>
+    			<div>
+    				<%= submit_tag "Update", {:class => 'submitButton'} %>
+    			</div>
+    		</div>
+      </div>
+    <%end%>
+</div>
