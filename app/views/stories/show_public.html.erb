@@ -18,17 +18,19 @@
 
 
 <div class="user_block type_article_head ">
-<a class="avatar" href="http://blogs.forbes.com/tomiogeron/">
-<img src="http://blogs-images.forbes.com/cache/gravatars/tomiogeron_136.jpg" alt="Tomio Geron">
+<a class="avatar" href="#">
+  <%= image_tag @story.user.profile.cropped_avatar_url %>
 </a>
 
 <p class="user">
-			<a href="http://blogs.forbes.com/tomiogeron/">Tomio Geron</a><span class="desc">, Forbes Staff</span>
+			<a href="http://blogs.forbes.com/tomiogeron/"><%= @story.user.profile.name %></a><span class="desc">, Wartawan sableng.com</span>
   	</p>
 
 <p class="about">Covering consumer Internet, especially social and start-up varieties.</p>
 
-<p class="follow"><a onclick="s.linkTrackVars='prop18';s.linkType='o';s.linkName='articleLink_ContribBylineFollow';if(typeof(globalPageName)!='undefined')s.prop18=globalPageName;s.lnk=s.co(this);s.gs(s_account);" href="http://blogs.forbes.com/people/tomiogeron/?do=follow" target="_blank">+ Follow</a></p>
+<p class="follow">
+  
+</p>
 <div class="arrow"></div>
 </div>    				
 		<hgroup>
