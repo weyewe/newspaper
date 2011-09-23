@@ -3,5 +3,5 @@
     <%= link_to top_story.title , story_public_url(top_story)%>
     <!-- <a href="http://www.forbes.com/sites/nathanvardi/2011/09/16/european-finance-ministers-search-for-debt-solution/">European Finance Ministers Search For Debt Solution</a> -->
   </h3>
-  <div class="byLine">Nathan Vardi</div>
+  <div class="byLine"><%= top_story.user.profile.name %></div>
 </li>
