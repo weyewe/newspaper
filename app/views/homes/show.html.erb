@@ -31,7 +31,7 @@
       <div id="mygallery" class="stepcarousel">
         <div style="width: 2736px;" class="belt">
           <% counter = 0 %>
-          <% for story in Story.find(:all, :limit => 4 )%>
+          <% for story in Story.find(:all, :limit => 4, :conditions => {:category_id => 9} )%>
             <div style="float: none; position: absolute; left: <%= counter*230%>px;" class="panel image">
               <% counter = counter + 1 %>
 
