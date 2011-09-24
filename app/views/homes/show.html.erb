@@ -56,9 +56,14 @@
   <!--Begin: left rail--> 
   <div id="leftRail" class="fleft clearfix">
     <ul id="newstream">
+      <% counter = 0 %>
       <% for category in Category.all[2..(Category.count)] %>
         <%= render :partial => "category", :locals =>{:stories => category.stories.limit(4),
         :category => category} %>
+        <% counter = counter + 1 %>
+        <% if counter == 2 %>
+          <%= render :partial => "newstream_ads"%>
+        <% end %>
       <% end %>
     </ul>
   </div>
