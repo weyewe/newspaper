@@ -15,6 +15,8 @@ class Story < ActiveRecord::Base
   # 2 == approved
   # 3 == featured
   
+  after_create :send_notification_email
+  
   def self.create_and_extract_transloadit( params , current_user)
     story = self.new( params[:story] )
     story.user_id = current_user.id
@@ -140,9 +142,10 @@ class Story < ActiveRecord::Base
       end
        
     end
-   
-      
-    
   end
   
+  
+  def send_notification_email
+    UserMailer.welcome_email(self.user, self).deliver
+  end
 end
