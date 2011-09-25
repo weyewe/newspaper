@@ -245,7 +245,8 @@ header {
 #header_search	{
 	position:absolute;
 	right:1px;
-	top:65px;
+/*  top:65px;*/
+  top: 0;
 	z-index:2;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {#header_search	{right:0px;}}
