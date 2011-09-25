@@ -19,7 +19,7 @@
         <h3>
           <%= link_to stories.first.title, story_public_url( stories.first )%>
         </h3>
-        <div class="byline">Tim Worstall</div>
+        <div class="byline"><%= stories.first.user.profile.name %></div>
       </article>
     </li>
     
@@ -28,7 +28,7 @@
         <h4>
           <%= link_to story.title, story_public_url(story)%>
         </h4>
-        <div class="byline">Agustino Fontevecchia</div>
+        <div class="byline"><%= story.user.profile.name %></div>
       </li>
     <% end %>  
   </ul>
