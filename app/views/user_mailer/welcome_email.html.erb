@@ -6,7 +6,9 @@
   <body>
     <h1>Hello bang, </h1>
     <p>
-      User yang namanya <%= @user.profile.name %> baru bikin artikel.<br />
+      <% if @user.profile != nil %>
+        User yang namanya <%= @user.profile.name %> baru bikin artikel.<br />
+      <% end %>
 
       Judul artikelnya : <%= @story.title %>
       
