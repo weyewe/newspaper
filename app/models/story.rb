@@ -31,6 +31,21 @@ class Story < ActiveRecord::Base
     story
   end
   
+  def update_and_extract_transloadit( params )
+    self.update_attributes( params[:story] )
+    if( params[:transloadit] )
+      self.destroy_current_images
+      self.assign_transloadit( params )
+    end
+       
+  end
+  
+  def destroy_current_images
+    self.story_images.each do |f |
+      f.destroy
+    end
+  end
+  
   def get_url_from_transloadit( transloadit_results, type)
     puts "The result class is #{transloadit_results.class}\n"*3
     puts "The result is #{transloadit_results}\n"*10
