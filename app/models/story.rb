@@ -87,7 +87,7 @@ class Story < ActiveRecord::Base
     if filter_sym != :all 
       @stories = Story.find(:all, :conditions => {
         :post_status => POST_STATUS_CONSTANT[filter_sym]
-      })
+      }, :order => "created_at DESC")
     else
       @stories = Story.all
     end
