@@ -25,13 +25,13 @@
 <!--start: special reports--> 
 
   <section id="specialReports">
-    <h2>komik sbleng</h2>
+    <h2>komik s'bleng</h2>
 
     <div class="carousel">
       <div id="mygallery" class="stepcarousel">
         <div style="width: 2736px;" class="belt">
           <% counter = 0 %>
-          <% for story in Story.find(:all, :limit => 4, :conditions => {:category_id => 9} )%>
+          <% for story in Story.find(:all, :limit => 4, :conditions => {:category_id => 9}, :order => "created_at DESC" )%>
             <div style="float: none; position: absolute; left: <%= counter*230%>px;" class="panel image">
               <% counter = counter + 1 %>
 
