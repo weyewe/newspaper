@@ -2,7 +2,7 @@
 
 <%= form_for( @story, :url => 'http://api2.transloadit.com/assemblies', :html => { :multipart => true, 
 	  :id=>"new_story_form" }) do |f| %>
-	  <input type="hidden" name="params" value="<%= transloadit_value_json%>" />
+	  <input type="hidden" name="params" value="<%= transloadit_value_story_json(@story) %>" />
 	<div class="row">
 		<%= f.label     :title, "Your Story's Title" %>
 		<%= f.text_field :title, :rows => 2	, :value => @story && @story.title ? @story.title : TEXT[:title], :onclick => "clear_text('headline', '#{TEXT[:title]}')", 

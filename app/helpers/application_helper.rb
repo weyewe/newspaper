@@ -34,6 +34,22 @@ module ApplicationHelper
     value.to_json
   end
   
+  def transloadit_value_story_json( resource )
+    value = {}
+    value["auth"] = {
+      "key" => "a919ae5378334f20b8db4f7610cdd1a7"
+    }
+    
+    value["template_id"] = "dd15de5ad2b942a2938869f513add756"
+    if resource.user == nil 
+      value["redirect_url"] = stories_url
+    else
+      value["redirect_url"] = story_url( resource  )
+    end
+    value["notify_url"] = "http://google.com"
+    value.to_json
+  end
+  
   
   def transloadit_value_profile_json( resource )
     value = {}
