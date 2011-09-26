@@ -21,7 +21,7 @@ class HomesController < ApplicationController
     @top_stories = Story.find(:all, :conditions => {
       :category_id => 2 ,
       :post_status => POST_STATUS_CONSTANT[:approved]
-      }, :limit => 6)
+      }, :limit => 6, :order => "created_at DESC")
   end
   
   def writer_dashboard
