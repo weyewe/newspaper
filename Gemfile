@@ -28,7 +28,9 @@ gem 'transloadit'
 
 gem "cancan"
 gem "delayed_job", "~> 2.1"
-
+gem 'hoptoad_notifier'
+gem 'heroku'
+gem "airbrake"
 
 # Use unicorn as the web server
 # gem 'unicorn'
