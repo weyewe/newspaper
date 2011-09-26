@@ -117,8 +117,16 @@
           }).url %>
         <% else %>
 
-          <%= content_tag :head do %>
+          <% content_for :head do %>
             <%= javascript_include_tag "jquery.cycle.all"%> 
+            <script type="text/javascript">
+            $('#slider').cycle({ 
+                fx:    'fade', 
+                width: 630, 
+                height: 300, 
+                timeout: 4000 
+            });
+            </script>
           <% end %>
         
           <% for slideshow_image in @story.slideshow_images %>
