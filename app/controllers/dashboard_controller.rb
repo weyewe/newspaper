@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
                                 find_according_to_post_status( @filter.to_sym ),
                                 params[:page],
                                 STORY_PER_PAGE)
+
   end
   
   def editor

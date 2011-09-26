@@ -53,7 +53,11 @@ class Story < ActiveRecord::Base
   
   def get_image_url_with_type( type )
     a = StoryImage.find( :first, :conditions => {:story_id => self.id, :image_type => type.to_s } )
-    a.url
+    if a == nil
+      return ""
+    else 
+      return a.url
+    end
   end
   
   def facebook_friendly_id_slug
