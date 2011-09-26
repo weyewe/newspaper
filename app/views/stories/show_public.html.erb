@@ -109,14 +109,28 @@
 	<div id="leftRail" class="fleft clearfix article">
 																			
 		<div class="body">
-			<div class="featured_image">
-			  <%#= image_tag(@story.get_image_url_with_type(:story)) %>
-			  <%= image_tag StoryImage.find(:first, :conditions => {
-          :image_type => "story",
-          :story_id => @story.id
-        }).url %>
+			<div class="featured_image" id="slider" >
+			  <% if @story.slideshow_images.count == 0 %>
+  			  <%= image_tag StoryImage.find(:first, :conditions => {
+            :image_type => "story",
+            :story_id => @story.id
+          }).url %>
+        <% else %>
+
+          <%= content_tag :head do %>
+            <%= javascript_include_tag "jquery.cycle.all"%> 
+          <% end %>
+        
+          <% for slideshow_image in @story.slideshow_images %>
+            <img src="<%= slideshow_image.image_url %>" />
+          <% end %>
+        <% end %>
+			</div> <!-- end of class featured_image -->
+			
+			<div class="story_body">
+			  <%= @story.content.html_safe %>		
 			</div>
-			<%= @story.content.html_safe %>		
+			
 		</div><!-- end div.body -->
 		
 	

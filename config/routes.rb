@@ -3,9 +3,13 @@ Newspaper::Application.routes.draw do
   devise_for :users, :controllers => {:sessions => "users/sessions", :passwords => "passwords" }
   resources :passwords
 
-  resources :stories
+  resources :stories do
+    resources :slideshow_images
+  end
   # resources :users
   resources :profiles
+  
+  
 
   match 'dashboard/admin' => 'dashboard#admin', :as => :admin_dashboard
   match 'dashboard/writer' => "dashboard#writer" , :as => :writer_dashboard

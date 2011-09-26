@@ -8,7 +8,7 @@ class Story < ActiveRecord::Base
   def should_generate_new_friendly_id?
     new_record?
   end
-  
+  has_many :slideshow_images
   attr_accessor :caption 
       
       

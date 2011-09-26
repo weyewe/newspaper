@@ -1,0 +1,45 @@
+
+<%= form_for( @slideshow_image, :url => 'http://api2.transloadit.com/assemblies', :html => { :multipart => true, 
+	  :id=>"new_story_form" }) do |f| %>
+	  <input type="hidden" name="params" value="<%= transloadit_value_slideshow_json(@slideshow_image, @story) %>" />
+
+
+  	<div class="row">
+  		<label>Add Image</label>
+  	</div>
+	
+	
+	<div class="row media">
+		<label>
+			Upload A Featured Image
+			<br/>
+		</label>
+		<%= f.file_field :image_url  %><br/>
+		<span class="small quieter"> JPEG, PNG and GIF's less than 5 MB.</span>
+	</div>
+	
+	<div class="row">
+		<%= f.label :caption, "Image Caption" %>
+		<%= f.text_area :caption, :cols=>'100', :rows=>'5' %>
+	</div>
+	
+
+
+
+	<div class="float-left">
+		<%= image_submit_tag image_path('admin/save.png') %>
+	</div>
+<% end %>
+
+
+<script type="text/javascript">
+var tlProtocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+document.write(unescape("%3Cscript src='" + tlProtocol + "assets.transloadit.com/js/jquery.transloadit2.js' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+<script type="text/javascript">
+   // We call .transloadit() after the DOM is initialized:
+   jQuery(document).ready(function() {
+     jQuery('#new_story_form').transloadit({wait: true});
+   });
+</script>

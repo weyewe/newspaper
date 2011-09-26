@@ -1,0 +1,21 @@
+
+<div class="formContainer">
+	<div class="formBody">
+
+		<h2>Add images for the slideshow</h2>
+		<%= render :partial => "form_transloadit"%>
+		
+	</div>
+</div>
+
+<% if @story.slideshow_images.count > 0 %>
+
+<h2>Current slides</h2>
+<ul>
+  <% for slideshow_image in @story.slideshow_images %>
+    <div>
+      <img src="<%= slideshow_image.image_url  %>" />
+    </div>
+  <% end %>
+</ul>
+<% end %>

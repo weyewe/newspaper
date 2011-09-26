@@ -25,6 +25,8 @@ gem "ckeditor"
 gem "paperclip", "~> 2.3"
 gem 'aws-s3'
 gem 'transloadit'
+gem 'pg'
+
 
 gem "cancan"
 gem "delayed_job", "~> 2.1"
