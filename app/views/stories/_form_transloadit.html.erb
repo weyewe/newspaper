@@ -28,6 +28,12 @@
 		<%= f.file_field :featured_image %><br/>
 		<span class="small quieter"> JPEG, PNG and GIF's less than 5 MB.</span>
 	</div>
+	
+	<div class="row">
+		<%= f.label :caption, "Image Caption" %>
+		<%= f.text_area :caption, :cols=>'100', :rows=>'5' %>
+	</div>
+	
 
 
 
