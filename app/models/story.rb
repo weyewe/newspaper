@@ -5,7 +5,11 @@ class Story < ActiveRecord::Base
   # has_friendly_id :title, :use_slug => true
   extend FriendlyId
   friendly_id :title, :use => :slugged
-  
+  def should_generate_new_friendly_id?
+    new_record?
+  end
+      
+      
   has_many :story_images
   belongs_to :user
   belongs_to :category
