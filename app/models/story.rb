@@ -33,11 +33,9 @@ class Story < ActiveRecord::Base
   
   def update_and_extract_transloadit( params )
     self.update_attributes( params[:story] )
-    if( params[:transloadit] )
-      self.destroy_current_images
-      self.assign_transloadit( params )
-    end
-       
+
+    self.assign_transloadit( params )
+
   end
   
   def destroy_current_images
@@ -61,6 +59,7 @@ class Story < ActiveRecord::Base
     transloadit_results = ActiveSupport::JSON.decode(params[:transloadit]).symbolize_keys[:results]
 
     if transloadit_results.length != 0 
+      self.destroy_current_images
       for type in TRANSLOADIT["story"]["return_value"]
         self.story_images.create( :image_type => type , 
         :url => get_url_from_transloadit( transloadit_results, type ) )
