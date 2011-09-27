@@ -59,7 +59,7 @@
       <%# counter = 0 %>
       <% for category in Category.all[2..(Category.count)] %>
         <% if category.stories.count > 0 %>
-          <%= render :partial => "category", :locals =>{:stories => category.stories.limit(4),
+          <%= render :partial => "category", :locals =>{:stories => category.stories.order("created_at DESC").limit(4),
               :category => category} %>
         <% end %>
         <%# counter = counter + 1 %>
