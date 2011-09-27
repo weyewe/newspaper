@@ -60,9 +60,11 @@ class Story < ActiveRecord::Base
     transloadit = ActiveSupport::JSON.decode(params[:transloadit])#.symbolize_keys[:uploads]
     transloadit_results = ActiveSupport::JSON.decode(params[:transloadit]).symbolize_keys[:results]
 
-    for type in TRANSLOADIT["story"]["return_value"]
-      self.story_images.create( :image_type => type , 
-      :url => get_url_from_transloadit( transloadit_results, type ) )
+    if transloadit_results.length != 0 
+      for type in TRANSLOADIT["story"]["return_value"]
+        self.story_images.create( :image_type => type , 
+        :url => get_url_from_transloadit( transloadit_results, type ) )
+      end
     end
   end
   
