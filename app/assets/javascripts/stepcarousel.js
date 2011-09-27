@@ -263,3 +263,5 @@ stepcarousel.setup({
 	contenttype: ['inline'] //content setting ['inline'] or ['external', 'path_to_external_file']
 });
 
+
+
