@@ -16,12 +16,9 @@ class Profile < ActiveRecord::Base
     profile
   end
   
-  def self.update_and_extract_transloadit( params , current_user )
-    profile = current_user.profile
-    profile.update_attributes(params[:profile])
-    profile.save
-    profile.assign_transloadit( params )
-    profile
+  def update_and_extract_transloadit( params )
+    
+    self.assign_transloadit( params )
   end
   
   def assign_transloadit( params )

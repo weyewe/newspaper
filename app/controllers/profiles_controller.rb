@@ -21,7 +21,12 @@ class ProfilesController < ApplicationController
   end
   
   def update
-    @profile = Profile.update_and_extract_transloadit( params , current_user )
+    @profile = Profile.find(params[:id])
+    @profile.update_attributes( params[:profile] )
+    if params[:transloadit] 
+      @profile.update_and_extract_transloadit( params )
+    end
+    
     redirect_to cropper_url
   end
   
