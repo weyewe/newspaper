@@ -12,8 +12,8 @@ class HomesController < ApplicationController
     # @items = Story.order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
     # @items = Story.where(:post_status => POST_STATUS_CONSTANT[:approved]).order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
     @main_story = Story.find(:first, :conditions => {:category_id => 1,
-        :post_status => POST_STATUS_CONSTANT[:approved]
-      })
+        :post_status => POST_STATUS_CONSTANT[:approved]},
+        :order => "created_at DESC")
       
     if @main_story == nil 
       @main_story = Story.find(:first, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
