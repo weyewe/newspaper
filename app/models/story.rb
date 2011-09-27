@@ -27,15 +27,16 @@ class Story < ActiveRecord::Base
     story = self.new( params[:story] )
     story.user_id = current_user.id
     story.save
-    story.assign_transloadit( params )
+    if params[:transloadit]
+      story.assign_transloadit( params )
+    end
     story
   end
   
   def update_and_extract_transloadit( params )
-    self.update_attributes( params[:story] )
+    
 
     self.assign_transloadit( params )
-
   end
   
   def destroy_current_images

@@ -36,13 +36,12 @@ class StoriesController < ApplicationController
   
   def update
     @story = Story.find params[:id]
-    # @story.update_attributes( params[:story] )
-    #  if( params[:transloadit] )
-    #    Story.update_extract_transloadit( params, @story )
-    #  end
-    #  
-    @story.update_and_extract_transloadit( params )
-    @story.save
+    @story.update_attributes( params[:story] )
+
+    if params[:transloadit]
+      @story.update_and_extract_transloadit( params )
+    end
+    
     redirect_to story_url(@story)
   end
 end
