@@ -9,19 +9,10 @@ class HomesController < ApplicationController
       redirect_to editor_dashboard_url
     end
     
-    # @items = Story.order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
-    # @items = Story.where(:post_status => POST_STATUS_CONSTANT[:approved]).order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
-    @main_story = Story.find(:first, :conditions => {:category_id => 1,
-        :post_status => POST_STATUS_CONSTANT[:approved]},
-        :order => "created_at DESC")
-      
-    if @main_story == nil 
-      @main_story = Story.find(:first, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
-    end
-    @top_stories = Story.find(:all, :conditions => {
-      :category_id => 2 ,
-      :post_status => POST_STATUS_CONSTANT[:approved]
-      }, :limit => 6, :order => "created_at DESC")
+    
+    get_instance_variables
+    
+    
   end
   
   def writer_dashboard
@@ -51,6 +42,48 @@ class HomesController < ApplicationController
   def wait_for_confirmation
   end
   
+  
+  def get_instance_variables
+    # @items = Story.order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
+    # @items = Story.where(:post_status => POST_STATUS_CONSTANT[:approved]).order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
+    # @main_story = Story.find(:first, :conditions => {:category_id => 1,
+    #     :post_status => POST_STATUS_CONSTANT[:approved]},
+    #     :order => "created_at DESC")
+    #   
+    # if @main_story == nil 
+    #   @main_story = Story.find(:first, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
+    # end
+    # @top_stories = Story.find(:all, :conditions => {
+    #   :category_id => 2 ,
+    #   :post_status => POST_STATUS_CONSTANT[:approved]
+    #   }, :limit => 6, :order => "created_at DESC")
+      
+      
+    @main_story = FeaturedStatus.find(:first, :conditions => {
+      :position => 0 , :order => 1 
+    })
+    
+    if @main_story.nil?
+      @main_story = FeaturedStatus.find(:first, :conditions => {:position => 0})
+    end
+    
+    if @main_story.nil?
+      @main_story = Story.find(:first, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
+    end
+    
+    @main_story = @main_story.story
+    
+    @top_stories = FeaturedStatus.find(:all, :conditions => {:position => 1}).sort_by { |x| x.order }
+    
+    if @top_stories.length == 0 
+      @top_stories = Story.find(:all, :conditions => {
+        :category_id => 2 ,
+        :post_status => POST_STATUS_CONSTANT[:approved]
+        }, :limit => 6, :order => "created_at DESC")
+    end
+    @top_stories = @top_stories.map { |x| x.story }
+    
+  end
 end
 
 
