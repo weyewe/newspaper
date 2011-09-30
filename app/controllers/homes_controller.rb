@@ -59,16 +59,16 @@ class HomesController < ApplicationController
     #   }, :limit => 6, :order => "created_at DESC")
       
       
-    @main_story = FeaturedStatus.find(:first, :conditions => {
+    @main_story = FeaturedStatus.find(:last, :conditions => {
       :position => 0 , :order => 1 
     })
     
     if @main_story.nil?
-      @main_story = FeaturedStatus.find(:first, :conditions => {:position => 0})
+      @main_story = FeaturedStatus.find(:last, :conditions => {:position => 0})
     end
     
     if @main_story.nil?
-      @main_story = Story.find(:first, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
+      @main_story = Story.find(:last, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
     end
     
     @main_story = @main_story.story
