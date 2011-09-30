@@ -61,19 +61,21 @@ class HomesController < ApplicationController
       
     @main_story = FeaturedStatus.find(:last, :conditions => {
       :position => 0 , :order => 1 
-    })
+    }).story
     
     if @main_story.nil?
-      @main_story = FeaturedStatus.find(:last, :conditions => {:position => 0})
+      @main_story = FeaturedStatus.find(:last, :conditions => {:position => 0}).story
     end
     
     if @main_story.nil?
-      @main_story = Story.find(:last, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
+      @main_story = Story.find(:last, 
+        :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
     end
     
-    @main_story = @main_story.story
+
     
-    @top_stories = FeaturedStatus.find(:all, :conditions => {:position => 1}).sort_by { |x| x.order }
+    @top_stories = FeaturedStatus.find(:all, 
+            :conditions => {:position => 1}).sort_by { |x| x.order }.map {|x| x.story }
     
     if @top_stories.length == 0 
       @top_stories = Story.find(:all, :conditions => {
@@ -81,7 +83,7 @@ class HomesController < ApplicationController
         :post_status => POST_STATUS_CONSTANT[:approved]
         }, :limit => 6, :order => "created_at DESC")
     end
-    @top_stories = @top_stories.map { |x| x.story }
+    
     
   end
 end
