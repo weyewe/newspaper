@@ -44,28 +44,20 @@ class HomesController < ApplicationController
   
   
   def get_instance_variables
-    # @items = Story.order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
-    # @items = Story.where(:post_status => POST_STATUS_CONSTANT[:approved]).order("created_at").page( params[:page] ).per(STORY_PER_PAGE)
-    # @main_story = Story.find(:first, :conditions => {:category_id => 1,
-    #     :post_status => POST_STATUS_CONSTANT[:approved]},
-    #     :order => "created_at DESC")
-    #   
-    # if @main_story == nil 
-    #   @main_story = Story.find(:first, :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
-    # end
-    # @top_stories = Story.find(:all, :conditions => {
-    #   :category_id => 2 ,
-    #   :post_status => POST_STATUS_CONSTANT[:approved]
-    #   }, :limit => 6, :order => "created_at DESC")
-      
+
       
     @main_story = FeaturedStatus.find(:last, :conditions => {
       :position => 0 , :order => 1 
-    }).story
+    })
     
     if @main_story.nil?
-      @main_story = FeaturedStatus.find(:last, :conditions => {:position => 0}).story
+      @main_story = FeaturedStatus.find(:last, :conditions => {:position => 0})
     end
+    
+    if not @main_story.nil?
+      @main_story = @main_story.story
+    end
+    
     
     if @main_story.nil?
       @main_story = Story.find(:last, 
