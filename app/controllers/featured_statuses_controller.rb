@@ -6,7 +6,7 @@ class FeaturedStatusesController < ApplicationController
     
     @items= nil
     
-    @items = paginate_items( FeaturedStatus.find(:all, :order => "created_at DESC", 
+    @items = paginate_items( FeaturedStatus.find(:all, :order => "update_time DESC", 
                               :conditions => { 
                                 :is_published => true
                                 }),  params[:page], STORY_PER_PAGE)
@@ -15,7 +15,7 @@ class FeaturedStatusesController < ApplicationController
     #                           params[:page] , 
     #                           STORY_PER_PAGE
     #                           )
-    @position_options = POSITION_CONSTANT.collect { |key, value| [key, value ]}
+    @position_options = POSITION_CONSTANT.collect { |key, value| [value, key ]}
     @ordering_options = (1..MAX_ORDER_LIMIT).collect { |x|  [x, x]}
   end
   
@@ -34,10 +34,11 @@ class FeaturedStatusesController < ApplicationController
   
   def update
     @story = Story.find( params[:story_id])
-    @story.featured_status.update_attributes( params[:featured_status])
+    @featured_status = @story.featured_status
+    @featured_status.adjust_order_and_update( params )
+    # @story.featured_status.update_time = Time.now
+    #    @story.featured_status.update_attributes( params[:featured_status] )
     
-    @story.featured_status.update_time = Time.now
-    @story.featured_status.save
     
     respond_to do |format|
       format.html do 

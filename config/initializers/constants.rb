@@ -21,9 +21,15 @@ FEATURE_STORY_LIMIT= {
 }
 
 POSITION_CONSTANT = {
-  "Kiri" => :left,
-  "Tengah" => :middle, 
-  "Kanan" => :right
+  0 => "Kiri",
+  1=> "Tengah",
+  2=> "Kanan"
+}
+
+POSITION_ID = {
+  :left => 0,
+  :middle => 1, 
+  :right => 2
 }
 
 MAX_ORDER_LIMIT = 6
