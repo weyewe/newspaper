@@ -35,7 +35,12 @@ class FeaturedStatusesController < ApplicationController
   def update
     @story = Story.find( params[:story_id])
     @featured_status = @story.featured_status
-    @featured_status.adjust_order_and_update( params )
+    
+    if  params[:from_layout_editor].nil?
+      @featured_status.adjust_order_and_update( params )
+    else
+      @featured_status.update_attributes(params[:featured_status])
+    end
     # @story.featured_status.update_time = Time.now
     #    @story.featured_status.update_attributes( params[:featured_status] )
     
