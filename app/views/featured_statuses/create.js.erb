@@ -1,0 +1,7 @@
+<% new_entry =  escape_javascript(render :partial => "home/work_experience_entry", 
+              :locals=> {:work_experience => @work_experience}) %> ;
+$(document).ready(function(){
+  $("ul#work-experience").prepend('<%= new_entry %>');
+});
+
+

@@ -1,0 +1,30 @@
+<% @title = "Layout Editor - Home" %>
+<%# @filter = 'featured' %>
+<%# @items = nil %>
+<ul class="tabs">
+  <li <%if @filter=='current_layout'%>class="current"<%end%>>
+	  <%= link_to "Tampilan Sementara", editor_dashboard_url( :filter => :current_layout )%>
+  </li>
+	<li <%if @filter=='latest_stories'%>class="current"<%end%>>
+	  <%= link_to "Terbaru", editor_dashboard_url( :filter => :latest_stories )%>
+  </li>
+	<li <%if @filter=='stories_by_category'%>class="current"<%end%>>
+	  <%= link_to "By Category", editor_dashboard_url(:filter => :stories_by_category) %>
+	</li>
+
+
+</ul>
+<div class="seeMoreContainer">
+	<%#=get_more_link(@filter)%>
+</div>
+ 
+<ul class="featured-status-editor">
+  <% @items.each do |item | %>
+    <%= render :partial => "news_list_entry", :locals => {:item => item,
+       :position_options => @position_options, 
+       :ordering_options => @ordering_options}%>
+  <% end %>
+</ul>
+
+
+<%= paginate @items %> 

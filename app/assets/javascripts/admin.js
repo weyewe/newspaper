@@ -6,5 +6,14 @@
 //
 //= require jquery
 //= require admin/admin_application
+//= require admin/uni-form.jquery.min
 
 
+
+$(document).ready(function(){
+  // bind the shite
+    
+     $('form.uniForm').uniform();
+     
+     
+});

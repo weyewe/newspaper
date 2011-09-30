@@ -1,0 +1,52 @@
+<% listClass = "" %>
+<% if item.position != nil && item.order != nil %>
+  <% listClass =  "selected"%>
+<% end %>
+
+<li class="<%= listClass %>">
+  <div class="storyContent">
+    <div class="imageBlock clearfix">
+      <a class="imageWrapper">
+        <%= image_tag item.story.get_image_url_with_type(:story) %>
+      </a>
+
+      <div class="featuredContent">
+        <div class="mainWrapper">
+          <h6 class="storyTitle" style="font-size:20px; padding-left:3px; ">
+            <%= item.story.title %>
+          </h6>
+
+          <div class="formFeaturedStatus" style="margin-left:350px;">
+            <%= form_for [ item.story, item ], :html => {:class=>"uniForm"} do |f|%>
+              <%= hidden_field_tag 'from_layout_editor', 'VUBJKB23UIVI1UU1VOBVI@' %>
+              <fieldset>
+                <div class="ctrlHolder">
+                  <%= f.label :position , "Posisi"%>
+                  <%= f.select :position , position_options %>
+                  <p class="formHint">Posisi artikel, kiri, tengah atau kanan?</p>
+                </div>
+                
+          
+                
+                <div class="ctrlHolder">
+                  <%= f.label :order , "Urutan"%>
+                  <%= f.select :order , ordering_options %>
+                  <p class="formHint">Posisi urut artikel tersebut. Kiri pertama, kiri kedua?</p>
+                </div>
+                
+                
+
+
+                <div class="buttonHolder"><button type="submit" class="primaryAction">Implementasi</button></div>
+              </fieldset>
+            
+            
+            
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+

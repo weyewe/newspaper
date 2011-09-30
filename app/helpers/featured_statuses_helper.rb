@@ -1,0 +1,2 @@
+module FeaturedStatusesHelper
+end

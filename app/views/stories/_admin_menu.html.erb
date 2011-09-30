@@ -44,3 +44,8 @@
   <%= link_to "Add Slideshow", new_story_slideshow_image_url(story)  %>
   <!-- <a href="#" style="background-color:rgb(230,230,230); height:50px; ">Add Slideshow</a> -->
 </div>
+
+<% if story.post_status == POST_STATUS_CONSTANT[:approved] %>
+
+  <%= render :partial => "featured_form" , :locals => {:story => story }%>
+<% end %>

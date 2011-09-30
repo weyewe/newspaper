@@ -1,6 +1,5 @@
 class DashboardController < ApplicationController
   layout "admin"
-  STORY_PER_PAGE = 9
   def writer
     ensure_user_is( :writer )
     extract_filter
@@ -23,6 +22,8 @@ class DashboardController < ApplicationController
                               params[:page] , 
                               STORY_PER_PAGE)
   end
+  
+  
   
   def ensure_user_is( role )
     if not current_user.has_role? role

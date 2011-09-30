@@ -10,6 +10,7 @@ class Story < ActiveRecord::Base
   end
   has_many :slideshow_images
   attr_accessor :caption 
+  has_one :featured_status
       
       
   has_many :story_images
@@ -21,7 +22,7 @@ class Story < ActiveRecord::Base
   # 2 == approved
   # 3 == featured
   
-  after_create :send_notification_email
+  after_create :send_notification_email, :create_featured_status
   
   def self.create_and_extract_transloadit( params , current_user)
     story = self.new( params[:story] )
@@ -91,7 +92,7 @@ class Story < ActiveRecord::Base
         :post_status => POST_STATUS_CONSTANT[filter_sym]
       }, :order => "created_at DESC")
     else
-      @stories = Story.all
+      @stories = Story.find(:all, :order => "created_at DESC")
     end
     
     return @stories 
@@ -174,5 +175,10 @@ class Story < ActiveRecord::Base
   
   def send_notification_email
     UserMailer.welcome_email(self.user, self).deliver
+  end
+  
+  def create_featured_status 
+    featured_status = FeaturedStatus.new(:story_id => self.id)
+    featured_status.save
   end
 end

@@ -5,12 +5,14 @@ Newspaper::Application.routes.draw do
 
   resources :stories do
     resources :slideshow_images
+    resources :featured_statuses
   end
   # resources :users
   resources :profiles
+  resources :featured_statuses
   
   
-
+  match 'dashboard/layout_editor' => 'featured_statuses#index', :as => :layout_editor
   match 'dashboard/admin' => 'dashboard#admin', :as => :admin_dashboard
   match 'dashboard/writer' => "dashboard#writer" , :as => :writer_dashboard
   match 'dashboard/editor' => "dashboard#editor" , :as => :editor_dashboard

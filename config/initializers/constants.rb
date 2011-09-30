@@ -12,3 +12,19 @@ POST_STATUS_CONSTANT = {
   }
   
   
+STORY_PER_PAGE = 9
+
+FEATURE_STORY_LIMIT= {
+  :left => 1,
+  :middle => 6,
+  :right => 1
+}
+
+POSITION_CONSTANT = {
+  "Kiri" => :left,
+  "Tengah" => :middle, 
+  "Kanan" => :right
+}
+
+MAX_ORDER_LIMIT = 6
+  

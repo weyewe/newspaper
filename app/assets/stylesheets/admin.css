@@ -2,4 +2,53 @@
  *= require admin/base
  *= require admin/main
  *= require admin/new_style
+ *= require admin/uni-form
 */
+
+
+#layout_editor { padding: 5px 5px; background-color: rgb(230,230,230); color: black;}
+#layout_editor:hover { text-decoration : underline;}
+.addSlideshowMenu { background-color: white;}
+.addSlideshowMenu a { background-color: rgb(230,230,230); font-weight: bold; font-size: 18px; padding: 5px 10px;}
+
+
+.featured-status-editor { list-style:none; margin:0 ; padding: 0;}
+.featured-status-editor li { padding: 5px 0; display:block; min-height:200px;}
+.featured-status-editor li.selected { border:1px solid rgb(230,230,230); margin-bottom:10px; background-color:yellow;}
+.featured-status-editor a { cursor :pointer; float:left; }
+.featured-status-editor a.image-wrapper{ float:right; margin-right:10px; text-decoration: none;}
+.featured-status-editor  img {
+    border: 3px solid #CCCCCC;
+    height: 165px;
+    margin-bottom: 10px;
+    width: 300px;
+    display:block;
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+div.storyContent { width :800px; min-height:500px;}
+
+
+div.featuredContent {
+  display: table-cell;
+  vertical-align: top;
+  width: 10000px;
+}
+
+div.featuredContent h6.storyTitle {color: #000000;
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0 0 5px;
+}
+
+div.mainWrapper {
+  padding-left: 300px;
+}
