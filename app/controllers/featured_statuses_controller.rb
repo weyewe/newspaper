@@ -37,9 +37,9 @@ class FeaturedStatusesController < ApplicationController
     @featured_status = @story.featured_status
     
     if  params[:from_layout_editor].nil?
-      @featured_status.adjust_order_and_update( params )
-    else
       @featured_status.update_attributes(params[:featured_status])
+    else
+      @featured_status.adjust_order_and_update( params )
     end
     # @story.featured_status.update_time = Time.now
     #    @story.featured_status.update_attributes( params[:featured_status] )
