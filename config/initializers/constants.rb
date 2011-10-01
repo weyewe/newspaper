@@ -32,5 +32,5 @@ POSITION_ID = {
   :right => 2
 }
 
-MAX_ORDER_LIMIT = 6
+MAX_ORDER_LIMIT = 8
   
