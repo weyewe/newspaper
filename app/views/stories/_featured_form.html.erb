@@ -1,6 +1,6 @@
 <div id="addFeaturedStatusMenu" style="padding:20px;">
   <%= form_for [story, story.featured_status] do |f| %>
-    <%= hidden_field_tag 'from_layout_editor', 'VUBJKB23UIVI1UU1VOBVI@' %>
+    <%#= hidden_field_tag 'from_layout_editor', 'VUBJKB23UIVI1UU1VOBVI@' %>
     
     <% if story.featured_status.is_published %>
       <%= f.hidden_field :is_published , :value => false%>

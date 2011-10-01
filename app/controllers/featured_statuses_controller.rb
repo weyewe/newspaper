@@ -36,14 +36,16 @@ class FeaturedStatusesController < ApplicationController
     @story = Story.find( params[:story_id])
     @featured_status = @story.featured_status
     
-    if  params[:from_layout_editor].nil?
-      @featured_status.update_attributes(params[:featured_status])
-    else
-      @featured_status.adjust_order_and_update( params )
-    end
-    # @story.featured_status.update_time = Time.now
-    #    @story.featured_status.update_attributes( params[:featured_status] )
+    puts "Before entering the shite\n"*10
     
+    if  not params[:from_layout_editor].nil?
+      puts "Inside the adjust order and update block\n"*10
+      # coming from layout editor
+      @featured_status.adjust_order_and_update( params )
+    else
+      @featured_status.update_attributes(params[:featured_status])
+      puts "We are inside the update_attributes block \n"*10
+    end
     
     respond_to do |format|
       format.html do 

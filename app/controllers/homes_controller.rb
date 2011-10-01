@@ -60,7 +60,7 @@ class HomesController < ApplicationController
     
     
     if @main_story.nil?
-      @main_story = Story.find(:last, 
+      @main_story = Story.find(:first, 
         :conditions => {:post_status => POST_STATUS_CONSTANT[:approved] })
     end
     
