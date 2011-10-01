@@ -10,7 +10,10 @@ Newspaper::Application.routes.draw do
   # resources :users
   resources :profiles
   resources :featured_statuses
-  
+  resources :categories
+  resources :categories do
+    resources :advertisements
+  end
   
   match 'dashboard/layout_editor' => 'featured_statuses#index', :as => :layout_editor
   match 'dashboard/admin' => 'dashboard#admin', :as => :admin_dashboard

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930043734) do
+ActiveRecord::Schema.define(:version => 20111001134520) do
+
+  create_table "advertisements", :force => true do |t|
+    t.integer  "category_id"
+    t.text     "content"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -26,12 +34,12 @@ ActiveRecord::Schema.define(:version => 20110930043734) do
     t.datetime "updated_at"
   end
 
-  create_table "featured_statuses", :force => true do |t|
+  create_table "featured_statuses" do |t|
     t.integer  "story_id"
     t.integer  "position"
     t.integer  "order"
     t.boolean  "is_published", :default => false
-    t.datetime "update_time",  :default => '2011-09-30 15:53:38'
+    t.datetime "update_time",  :default => '2011-10-01 14:12:05'
     t.datetime "created_at"
     t.datetime "updated_at"
   end

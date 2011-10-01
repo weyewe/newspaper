@@ -24,6 +24,12 @@ class DashboardController < ApplicationController
   end
   
   
+  def admin
+    ensure_user_is( :admin )
+    @filter = "all"
+    @categories = Category.all.sort_by {|c| c.stories.count }.reverse
+  end
+  
   
   def ensure_user_is( role )
     if not current_user.has_role? role
