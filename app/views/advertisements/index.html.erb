@@ -27,9 +27,10 @@
 <% end %>
 
 <div id="current-ads">
+  THIS is WILLY, number of ads is <%= @category.advertisements.count %>
   <ul>
     <% @category.advertisements.each do |ads| %>
-      <div class="ads-list-item">
+      <div class="ads-list-item" style="border: 1px solid black; padding:5px 0;margin-bottom:20px;">
         <%= ads.content %>
       </div>
     <% end %>

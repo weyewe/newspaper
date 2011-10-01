@@ -2,6 +2,11 @@ class AdvertisementsController < ApplicationController
   layout 'admin'
   def create
     @category = Category.find_by_id( params[:category_id])
+    @new_ads = Advertisement.new( params[:advertisement])
+    @new_ads.category_id = @category.id
+    @new_ads.save
+    
+    redirect_to category_advertisements_url( @category )
   end
   
   def update 
