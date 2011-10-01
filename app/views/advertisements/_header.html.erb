@@ -1,0 +1,9 @@
+<div class="introContainer">
+	<p>Category <%= @category.name %> punya <a href="" title='help_email-alerts' id='help_email-alerts'><b><FONT COLOR="#DC143C"><%= @category.advertisements.count %> ads</FONT></b> .</a></p>
+</div>
+<%#= render :partial => "shared/stats"%>
+
+
+<div class="joinContainer">
+  <%= link_to "< Back", admin_dashboard_url  %>
+</div>

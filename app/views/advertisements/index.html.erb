@@ -1,0 +1,37 @@
+
+
+<%= form_for [ @category,  Advertisement.new ], :html => {:class=>"uniForm"} do |f|%>
+  <fieldset>
+
+
+    
+    <div class="ctrlHolder">
+      <%= f.label :position , "Urutan"%>
+      <%= f.select :position , @position_options %>
+      <p class="formHint">Posisi urut iklan tersebut. Kiri pertama, kiri kedua?</p>
+    </div>
+    <div class="ctrlHolder">
+      <%= f.label :content, "Code iklan"%>
+      <%= f.text_area :content, :rows => 25, :cols=> 25%>
+      <p class="formHint">This is a form hint.</p>
+    </div>
+    
+    
+
+
+    <div class="buttonHolder"><button type="submit" class="primaryAction">Implementasi</button></div>
+  </fieldset>
+
+
+
+<% end %>
+
+<div id="current-ads">
+  <ul>
+    <% @category.advertisements.each do |ads| %>
+      <div class="ads-list-item">
+        <%= ads.content %>
+      </div>
+    <% end %>
+  </ul>
+</div>

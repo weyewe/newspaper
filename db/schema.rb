@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111001134520) do
+ActiveRecord::Schema.define(:version => 20111001153607) do
 
   create_table "advertisements", :force => true do |t|
     t.integer  "category_id"
@@ -34,12 +34,12 @@ ActiveRecord::Schema.define(:version => 20111001134520) do
     t.datetime "updated_at"
   end
 
-  create_table "featured_statuses" do |t|
+  create_table "featured_statuses", :force => true do |t|
     t.integer  "story_id"
     t.integer  "position"
     t.integer  "order"
     t.boolean  "is_published", :default => false
-    t.datetime "update_time",  :default => '2011-10-01 14:12:05'
+    t.datetime "update_time",  :default => '2011-10-01 15:00:39'
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(:version => 20111001134520) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "",    :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
+    t.string   "email",                                                    :null => false
+    t.string   "encrypted_password",     :limit => 128,                    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

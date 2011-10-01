@@ -21,7 +21,9 @@
 <ul>
   <% @categories.each do |category| %> 
     <li>
-      <%= category.name  + "-- (#{category.stories.count})"%>
+      <%= link_to  category.name  + "-- (#{category.stories.count})" , 
+          category_advertisements_url( category )%>
+ 
     </li>
   <% end %>
 </ul>
