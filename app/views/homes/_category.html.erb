@@ -33,9 +33,14 @@
     <% end %>  
   </ul>
   
+  <% if category.advertisements.count > 0 %>
   <ul class="channel" style="padding-top:10px; padding-bottom:10px; text-align:center; background-color:rgb(230,230,230); margin:0px;">
     <h2>Advertorial</h2>
-    <a href="http://www.surabaya.go.id/" style="padding:0 10px;">
+    
+    <% category.advertisements.each do |ads| %>
+      <%= ads.content.html_safe %>
+    <% end %>
+    <!-- <a href="http://www.surabaya.go.id/" style="padding:0 10px;">
       <%= image_tag "http://s3.amazonaws.com/sablengmedia/1png.png" ,:width=> "100" %>
     </a>
     <a href="http://www.baliprov.go.id/" style="padding:0 10px;">
@@ -49,8 +54,9 @@
     </a>
     <a href="http://www.surabaya.go.id/" style="padding:0 10px;">
       <%= image_tag "http://s3.amazonaws.com/sablengmedia/1png.png", :width=> "100" %>
-    </a>
+    </a> -->
   </ul>
+  <% end %>
   
   
 </li>
